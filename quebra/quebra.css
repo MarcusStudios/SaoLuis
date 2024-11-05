@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.piece, .drop-zone {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #555;
+    background-size: cover;
+}
+
+.piece {
+    cursor: grab;
+    background-color: #ccc;
+}
+
+#piece1 {
+    background-image: url('path/to/image1.jpg'); /* Adicione uma imagem real */
+}
+
+#piece2 {
+    background-image: url('path/to/image2.jpg'); /* Adicione uma imagem real */
+}
+
+#piece3 {
+    background-image: url('path/to/image3.jpg'); /* Adicione uma imagem real */
+}
+
+#piece4 {
+    background-image: url('path/to/image4.jpg'); /* Adicione uma imagem real */
+}
+
+.drop-zone {
+    background-color: #e0e0e0;
+}

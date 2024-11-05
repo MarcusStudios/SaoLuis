@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de História com Imagens</title>
+    <link rel="stylesheet" href="ligar.css">
+</head>
+<body>
+    <h1>Complete a História</h1>
+    <p>Arraste as imagens para as seções corretas da história.</p>
+
+    <div id="story">
+        <div class="story-section" data-correct="image1">
+            <h2>Seção 1</h2>
+            <p>Texto da história 1</p>
+        </div>
+
+        <div class="story-section" data-correct="image2">
+            <h2>Seção 2</h2>
+            <p>Texto da história 2</p>
+        </div>
+
+        <div class="story-section" data-correct="image3">
+            <h2>Seção 3</h2>
+            <p>Texto da história 3</p>
+        </div>
+    </div>
+
+    <div id="images">
+        <h3>Imagens</h3>
+        <img src="imgs/Mula_sem_cabe_a_em_Voc__Sabia_-_Folclore.png" id="image1" class="draggable" draggable="true" alt="Imagem 1">
+        <img src="imgs/5d8603477e69319b0fc91904d015d25d.png" id="image2" class="draggable" draggable="true" alt="Imagem 2">
+        <img src="imgs/personagens-folclore-brasileiro-curupira.png" id="image3" class="draggable" draggable="true" alt="Imagem 3">
+    </div>
+
+    <div id="result"></div>
+
+    <script src="ligar.js"></script>
+</body>
+</html>

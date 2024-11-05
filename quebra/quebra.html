@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebra-Cabeça</title>
+    <link rel="stylesheet" href="quebra.css">
+</head>
+<body>
+    <h1>Jogo de Quebra-Cabeça</h1>
+    <div id="game-board">
+        <!-- Peças do quebra-cabeça -->
+        <div class="piece" draggable="true" id="piece1"></div>
+        <div class="piece" draggable="true" id="piece2"></div>
+        <div class="piece" draggable="true" id="piece3"></div>
+        <div class="piece" draggable="true" id="piece4"></div>
+
+        <!-- Espaços para soltar as peças -->
+        <div class="drop-zone" data-correct="piece1"></div>
+        <div class="drop-zone" data-correct="piece2"></div>
+        <div class="drop-zone" data-correct="piece3"></div>
+        <div class="drop-zone" data-correct="piece4"></div>
+    </div>
+
+    <script src="quebra.js"></script>
+</body>
+</html>
