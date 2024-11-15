@@ -67,7 +67,7 @@ const questions = [
       "Na área da Praça Gonçalves Dias",
       "Na Igreja do Carmo",
     ],
-    answer: 3, 
+    answer: 2, 
   },
   {
     question:
@@ -89,18 +89,18 @@ const questions = [
       "Eram bandidos contrabandistas disfarçados com lençóis",
       "Eram alucinações causadas por gás de lampiões"
     ],
-    answer: 3,
+    answer: 2,
   },
   {
     question:
     "10. Lenda da Praia do Olho D’água: Quem era o chefe da aldeia indígena mencionada na lenda?",
     options: [
       "Itapema.",
-      "Itaporma.",
+      "Itaporama.",
       "Guraci.",
       "Jaci."
     ],
-    answer: 3 
+    answer: 1 
   },
   {
     question:
@@ -111,7 +111,7 @@ const questions = [
       "Para atrair turistas curiosos",
       "Para encobrir suas atividades criminosas e escapar da atenção da população"
     ],
-    answer: 3
+    answer: 0
   },
   {
     question:
