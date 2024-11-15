@@ -1,0 +1,131 @@
+/* Estilo Básico */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#quiz-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Estilo do Timer */
+#timer {
+  display: flex;
+  align-items: center;
+  background-color: #e0f0ff; /* Fundo azul claro */
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+#time-box {
+  background-color: #333; /* Fundo escuro para o tempo restante */
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timer-label {
+  font-size: 1rem;
+  color: #333;
+  margin-right: 10px;
+}
+
+#time-left {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Pergunta */
+#question-container {
+  margin-bottom: 20px;
+}
+
+#question-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Opções */
+#options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 2px solid #d0d0d0;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option:hover {
+  background-color: #e0e0e0;
+  border-color: #007bff;
+}
+
+.option.correct {
+  background-color: #28a745; /* Verde para correto */
+  color: #fff;
+  border-color: #28a745;
+}
+
+.option.wrong {
+  background-color: #dc3545; /* Vermelho para incorreto */
+  color: #fff;
+  border-color: #dc3545;
+}
+
+.option.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #888;
+}

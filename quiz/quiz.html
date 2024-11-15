@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Lendas</title>
+  <!-- Importando a Fonte Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-    <P>Teste</P>
+  <div id="quiz-container">
+    <header>
+      <h1>Quiz de Lendas</h1>
+      <div id="timer">
+        <span id="timer-label">Tempo:</span>
+        <div id="time-box">
+          <span id="time-left">30</span>
+        </div>
+      </div>
+      
+    </header>
+    <div id="question-container">
+      <div id="question-text"></div>
+      <div id="options-container"></div>
+    </div>
+    <footer>
+      <div id="question-counter">1 de X Questões</div>
+    </footer>
+  </div>
+  <script src="quiz.js"></script>
 </body>
 </html>
