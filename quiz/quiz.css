@@ -1,9 +1,17 @@
+/* Definindo a fonte com @font-face */
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('../fonts/JetBrainsMonoNL-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* Estilo Básico */
 body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'JetBrainsMono', sans-serif;  /* Fonte personalizada aplicada */
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
@@ -36,6 +44,7 @@ header h1 {
   color: #333;
   font-weight: 700;
   margin: 0;
+  font-family: 'JetBrainsMono', sans-serif; /* Aplicando a fonte personalizada ao título */
 }
 
 /* Estilo do Timer */
@@ -78,9 +87,11 @@ header h1 {
 }
 
 #question-text {
+  color: #333;
   font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'JetBrainsMono', sans-serif; /* Fonte personalizada para a pergunta */
 }
 
 /* Opções */
@@ -92,13 +103,15 @@ header h1 {
 
 .option {
   background-color: #f0f0f0;
-  color: #333;
+  color: black;
   border: 2px solid #d0d0d0;
   padding: 15px;
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
+  font-weight: bold;
+  font-family: 'JetBrainsMono', sans-serif; /* Fonte personalizada nas opções */
 }
 
 .option:hover {
@@ -128,4 +141,5 @@ footer {
   margin-top: 20px;
   font-size: 0.9rem;
   color: #888;
+  font-family: 'JetBrainsMono', sans-serif; /* Fonte personalizada no rodapé */
 }

@@ -240,6 +240,7 @@ function goToNextQuestion() {
   }
 }
 
+
 function updateQuestionCounter() {
   const questionCounter = document.getElementById("question-counter");
   questionCounter.textContent = `${currentQuestionIndex + 1} de ${
