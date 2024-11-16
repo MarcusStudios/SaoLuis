@@ -178,7 +178,7 @@ header h1 {
   padding: 30px;
   text-align: center;
   border-radius: 15px; /* Bordas mais suaves */
-  box-shadow: 0 0 20px rgb(0, 0, 0); /* Sombra suave */
+  box-shadow: 0 0 20px rgb(255, 0, 0); /* Sombra suave */
   width: 80%;
   max-width: 500px;
   margin: 0 auto;
@@ -212,13 +212,13 @@ button {
   border: none;
   border-radius: 10px; /* Bordas arredondadas */
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Efeitos de transição */
+   /* Efeitos de transição */
 }
 
 /* Efeito ao passar o mouse nos botões */
 button:hover {
-  background-color: #ffffff; /* Cor de fundo ao passar o mouse */
-  transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+ 
+ /* Leve elevação ao passar o mouse */
 }
 
 /* Efeito de clique nos botões */
