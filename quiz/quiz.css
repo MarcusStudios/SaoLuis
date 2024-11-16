@@ -5,6 +5,24 @@
   font-weight: bold;
   font-style: normal;
 }
+.feedback {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 /* Estilo Básico */
 body, html {
@@ -134,6 +152,100 @@ header h1 {
 .option.disabled {
   pointer-events: none;
   opacity: 0.6;
+}
+/* Container da questão com transição de fade e deslocamento */
+.question-container {
+  opacity: 0;
+  transform: translateY(20px); /* Deslocamento para baixo */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Classe visível, que ativa a transição para a questão */
+.question-container.visible {
+  opacity: 1;
+  transform: translateY(0); /* Volta à posição original */
+}
+#question-counter {
+  font-size: 18px;
+  margin: 20px;
+  font-weight: bold;
+}
+/* Estilo para a tela final */
+/* Estilo para a tela final */
+#final-screen {
+  background-color: #fafdff; /* Cor de fundo azul */
+  color: rgb(0, 0, 0); /* Cor do texto para contraste */
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px; /* Bordas mais suaves */
+  box-shadow: 0 0 20px rgb(0, 0, 0); /* Sombra suave */
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: fixed; /* Fixa a tela no meio da tela */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza a tela */
+  display: none; /* Inicialmente escondido */
+  z-index: 1000; /* Garante que fique na frente */
+  font-size: 18px; /* Aumenta o tamanho do texto */
+}
+
+/* Quando a tela final for visível */
+#final-screen.visible {
+  display: block; /* Exibe a tela final */
+}
+
+/* Quando a tela final estiver oculta */
+#final-screen.hidden {
+  display: none; /* Esconde a tela final */
+}
+
+/* Estilo dos botões */
+button {
+  font-family: 'JetBrainsMono', sans-serif; /* Fonte personalizada nos botões */
+  font-size: 16px;
+  padding: 12px 30px;
+  margin-top: 15px;
+  background-color: #000000; /* Cor de fundo verde */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Bordas arredondadas */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efeitos de transição */
+}
+
+/* Efeito ao passar o mouse nos botões */
+button:hover {
+  background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+  transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+}
+
+/* Efeito de clique nos botões */
+button:active {
+  transform: translateY(1px); /* Ao clicar, o botão desce um pouco */
+}
+
+/* Estilos para as telas de quiz */
+.quiz-screen {
+  display: block; /* Exibe as telas de quiz normalmente */
+  font-family: 'JetBrainsMono', sans-serif;
+  font-size: 18px;
+  color: #000000; /* Cor de texto padrão */
+}
+
+/* Títulos do quiz */
+.quiz-screen h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ff0000;
+}
+
+/* Perguntas */
+.quiz-screen p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: black;
 }
 
 /* Rodapé */

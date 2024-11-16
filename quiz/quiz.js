@@ -170,6 +170,7 @@ questions.forEach((question) => {
 let currentQuestionIndex = 0;
 let timerInterval;
 let timeLeft = 30;
+let score = 0; // Variável para armazenar a pontuação
 
 function startQuiz() {
   showQuestion();
@@ -196,20 +197,31 @@ function updateTimer() {
 }
 
 function showQuestion() {
-  const questionText = document.getElementById("question-text");
-  const optionsContainer = document.getElementById("options-container");
+  const questionContainer = document.getElementById("question-container");
 
-  const currentQuestion = questions[currentQuestionIndex];
-  questionText.textContent = currentQuestion.question;
-  optionsContainer.innerHTML = "";
+  // Esconde a questão anterior (desaparece com efeito)
+  questionContainer.classList.remove("visible");
 
-  currentQuestion.options.forEach((option, index) => {
-    const button = document.createElement("button");
-    button.classList.add("option");
-    button.textContent = option;
-    button.onclick = () => selectAnswer(index);
-    optionsContainer.appendChild(button);
-  });
+  // Aguarda meio segundo para permitir o efeito de transição
+  setTimeout(() => {
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+
+    const currentQuestion = questions[currentQuestionIndex];
+    questionText.textContent = currentQuestion.question;
+    optionsContainer.innerHTML = "";
+
+    currentQuestion.options.forEach((option, index) => {
+      const button = document.createElement("button");
+      button.classList.add("option");
+      button.textContent = option;
+      button.onclick = () => selectAnswer(index);
+      optionsContainer.appendChild(button);
+    });
+
+    // Torna a questão visível após configurada
+    questionContainer.classList.add("visible");
+  }, 500); // Meio segundo de atraso
 }
 
 function selectAnswer(selectedIndex) {
@@ -219,14 +231,26 @@ function selectAnswer(selectedIndex) {
 
   if (selectedIndex === correctAnswer) {
     options[selectedIndex].classList.add("correct");
+    score++; // Incrementa a pontuação
   } else {
     options[selectedIndex].classList.add("wrong");
     options[correctAnswer].classList.add("correct");
   }
 
+  // Desabilita as opções para não poderem ser selecionadas novamente
   options.forEach((option) => option.classList.add("disabled"));
 
-  setTimeout(goToNextQuestion, 2000);
+  // Exibe o feedback
+  const feedback = document.createElement("div");
+  feedback.classList.add("feedback");
+  feedback.textContent = selectedIndex === correctAnswer ? "Resposta Correta!" : "Resposta Errada!";
+  document.getElementById("question-container").appendChild(feedback);
+
+  // Remove o feedback após 2 segundos e vai para a próxima questão
+  setTimeout(() => {
+    feedback.remove();
+    goToNextQuestion();
+  }, 2000);
 }
 
 function goToNextQuestion() {
@@ -236,16 +260,56 @@ function goToNextQuestion() {
     updateQuestionCounter();
     startTimer();
   } else {
-    alert("Fim do Quiz!");
+    showFinalScreen(); // Mostra a tela final quando o quiz terminar
   }
 }
 
-
 function updateQuestionCounter() {
   const questionCounter = document.getElementById("question-counter");
-  questionCounter.textContent = `${currentQuestionIndex + 1} de ${
-    questions.length
-  } Questões`;
+  questionCounter.textContent = `${currentQuestionIndex + 1} de ${questions.length} Questões`;
 }
 
+// Função para mostrar a tela final com a pontuação
+// Função para mostrar a tela final
+function showFinalScreen() {
+  const finalScreen = document.getElementById("final-screen");
+  const finalScore = document.getElementById("final-score");
+  finalScore.textContent = `Sua pontuação foi: ${score} de ${questions.length}`;
+  
+  // Esconde todas as telas do quiz
+  const quizScreens = document.querySelectorAll('.quiz-screen');
+  quizScreens.forEach(screen => {
+    screen.style.display = 'none';
+  });
+
+  // Exibe a tela final
+  finalScreen.style.display = 'block'; // Torna a tela final visível
+}
+
+// Função para reiniciar o quiz
+function restartQuiz() {
+  currentQuestionIndex = 0;
+  score = 0; // Reseta a pontuação
+  
+  // Esconde a tela final
+  const finalScreen = document.getElementById("final-screen");
+  finalScreen.style.display = 'none'; // Esconde a tela final
+
+  // Exibe novamente as telas de quiz
+  const quizScreens = document.querySelectorAll('.quiz-screen');
+  quizScreens.forEach(screen => {
+    screen.style.display = 'block'; // Exibe a tela de quiz
+  });
+
+  startQuiz(); // Reinicia o quiz
+}
+
+// Função para voltar para a tela de jogos
+function goToGameScreen() {
+  window.location.href = "../index.html"; // Redireciona para a tela de jogos
+}
+
+
+
+// Inicializa o quiz quando a página carregar
 window.onload = startQuiz;
