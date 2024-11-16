@@ -7,8 +7,67 @@
   <!-- Importando a Fonte Roboto -->
   <link rel="stylesheet" href="../fonts/JetBrainsMonoNL-Bold.ttf">
   <link rel="stylesheet" href="quiz.css">
+  <style>
+    /* Estilo básico para o modal */
+    #rules-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    #modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+    #modal-buttons {
+      margin-top: 20px;
+    }
+    #modal-buttons button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #start-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Inicialmente esconder o quiz */
+    #quiz-container {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <!-- Botão para Iniciar o Quiz -->
+  <button id="start-button">Iniciar Quiz</button>
+
+  <!-- Modal de Regras -->
+  <div id="rules-modal">
+    <div id="modal-content">
+      <h2>Regras do Jogo</h2>
+      <p>1. Responda às perguntas dentro do tempo limite.</p>
+      <p>2. Cada resposta correta te dá pontos.</p>
+      <p>3. Se errar, o quiz termina!</p>
+      <div id="modal-buttons">
+        <button id="exit-button">Sair</button>
+        <button id="start-quiz-button">Ir para o Quiz</button>
+      </div>
+    </div>
+  </div>
+
   <div id="quiz-container">
     <header>
       <h1>Quiz de Lendas</h1>      
@@ -18,16 +77,44 @@
           <span id="time-left">30</span>
         </div>
       </div>
-      
     </header>
+
     <div id="question-container">
       <div id="question-text"></div>
       <div id="options-container"></div>
     </div>
+
     <footer>
       <div id="question-counter">1 de X Questões</div>
     </footer>
   </div>
+
   <script src="quiz.js"></script>
+  <script>
+    // Elementos do DOM
+    const startButton = document.getElementById("start-button");
+    const rulesModal = document.getElementById("rules-modal");
+    const exitButton = document.getElementById("exit-button");
+    const startQuizButton = document.getElementById("start-quiz-button");
+    const quizContainer = document.getElementById("quiz-container");
+
+    // Mostrar o modal com as regras quando clicar no botão "Iniciar Quiz"
+    startButton.addEventListener("click", () => {
+      rulesModal.style.display = "flex"; // Exibe o modal de regras
+      startButton.style.display = "none"; // Esconde o botão de iniciar quiz
+    });
+
+    // Fechar o modal de regras e mostrar o quiz
+    exitButton.addEventListener("click", () => {
+      rulesModal.style.display = "none"; // Fecha o modal
+      startButton.style.display = "inline-block"; // Reexibe o botão de iniciar quiz
+    });
+
+    // Iniciar o quiz
+    startQuizButton.addEventListener("click", () => {
+      rulesModal.style.display = "none"; // Fecha o modal
+      quizContainer.style.display = "block"; // Exibe o quiz
+    });
+  </script>
 </body>
 </html>
