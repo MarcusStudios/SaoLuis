@@ -43,9 +43,12 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.story-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.story-section.hovered {
+    border-color: green;
+}
+
+.story-section.hovered {
+    border: 2px dashed #6a0dad;
 }
 
 #images {
@@ -109,64 +112,5 @@ h1 {
 
     #result {
         font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    #story {
-        gap: 10px;
-    }
-
-    .story-section {
-        width: 180px;
-        height: 220px;
-        padding: 10px;
-    }
-
-    #images {
-        gap: 8px;
-    }
-
-    .draggable {
-        width: 120px;
-        height: 120px;
-    }
-
-    #result {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    #story {
-        gap: 8px;
-        padding: 5px;
-    }
-
-    .story-section {
-        width: 150px;
-        height: 180px;
-        padding: 8px;
-    }
-
-    #images {
-        gap: 5px;
-    }
-
-    .draggable {
-        width: 100px;
-        height: 100px;
-    }
-
-    #result {
-        font-size: 16px;
     }
 }
