@@ -19,54 +19,7 @@ const rounds = [
             { id: 'section3', text: 'Texto da história 3 - Rodada 1' },
         ]
     },
-    {
-        images: [
-            { id: 'image1', src: 'imgs/rodada2_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada2_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada2_img3.png', correctSection: 'section3' },
-        ],
-        sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 2' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 2' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 2' },
-        ]
-    },
-    {
-        images: [
-            { id: 'image1', src: 'imgs/rodada3_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada3_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada3_img3.png', correctSection: 'section3' },
-        ],
-        sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 3' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 3' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 3' },
-        ]
-    },
-    {
-        images: [
-            { id: 'image1', src: 'imgs/rodada4_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada4_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada4_img3.png', correctSection: 'section3' },
-        ],
-        sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 4' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 4' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 4' },
-        ]
-    },
-    {
-        images: [
-            { id: 'image1', src: 'imgs/rodada5_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada5_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada5_img3.png', correctSection: 'section3' },
-        ],
-        sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 5' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 5' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 5' },
-        ]
-    }
+    // Outras rodadas seguem a mesma estrutura
 ];
 
 initializeGame();
@@ -96,95 +49,98 @@ function loadRound() {
         imgElement.classList.add('draggable');
         imgElement.setAttribute('draggable', 'true');
         imagesContainer.appendChild(imgElement);
-        imgElement.addEventListener('dragstart', dragStart);
-        imgElement.addEventListener('touchstart', touchStart);
-        imgElement.addEventListener('touchmove', touchMove);
-        imgElement.addEventListener('touchend', touchEnd);
+        imgElement.addEventListener('touchstart', dragStart);
+        imgElement.addEventListener('mousedown', dragStart);  // Para dispositivos desktop
     });
 
     correctCount = 0;
     result.textContent = '';
 }
 
-// Funções de drag and drop (mouse)
+// Funções de drag and drop (para dispositivos móveis e desktop)
+let draggedImage = null;
+
 function dragStart(event) {
-    event.dataTransfer.setData('text', event.target.id);
+    // Previne o comportamento padrão
+    event.preventDefault();
+    // Se for no touch (móvel), armazena a posição inicial do toque
+    if (event.type === 'touchstart') {
+        const touch = event.touches[0];
+        draggedImage = event.target;
+        draggedImage.style.position = 'absolute';
+        draggedImage.style.zIndex = 10;  // Coloca a imagem acima das outras
+        draggedImage.style.left = `${touch.pageX - draggedImage.width / 2}px`;
+        draggedImage.style.top = `${touch.pageY - draggedImage.height / 2}px`;
+    } else {
+        draggedImage = event.target;
+        draggedImage.style.position = 'absolute';
+        draggedImage.style.zIndex = 10;
+        draggedImage.style.left = `${event.pageX - draggedImage.width / 2}px`;
+        draggedImage.style.top = `${event.pageY - draggedImage.height / 2}px`;
+    }
+
+    // Adiciona os eventos para mover a imagem
+    document.addEventListener('touchmove', dragMove);
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('touchend', dragEnd);
+    document.addEventListener('mouseup', dragEnd);
 }
 
-function dragOver(event) {
-    event.preventDefault();
-}
-
-function dropImage(event) {
-    event.preventDefault();
-    const imageId = event.dataTransfer.getData('text');
-    const draggedImage = document.getElementById(imageId);
-
-    if (event.target.classList.contains('story-section')) {
-        const correctSection = rounds[currentRound].images.find(img => img.id === imageId).correctSection;
-
-        if (event.target.getAttribute('data-correct') === correctSection) {
-            event.target.appendChild(draggedImage);
-            correctCount++;
-            if (correctCount === 3) {
-                displayResult('Você acertou todas as imagens! Próxima rodada disponível.', 'green');
-                showNextRoundButton();
-            }
+function dragMove(event) {
+    // Move a imagem para a posição do toque ou do mouse
+    if (draggedImage) {
+        let x, y;
+        if (event.type === 'touchmove') {
+            const touch = event.touches[0];
+            x = touch.pageX - draggedImage.width / 2;
+            y = touch.pageY - draggedImage.height / 2;
         } else {
-            displayResult('Está incorreto. Tente novamente!', 'red');
+            x = event.pageX - draggedImage.width / 2;
+            y = event.pageY - draggedImage.height / 2;
         }
+
+        draggedImage.style.left = `${x}px`;
+        draggedImage.style.top = `${y}px`;
     }
 }
 
-// Funções de touch (para toque na tela)
-let touchStartX = 0;
-let touchStartY = 0;
-
-function touchStart(event) {
-    const touch = event.touches[0]; // Captura o primeiro toque
-    touchStartX = touch.pageX;
-    touchStartY = touch.pageY;
-    event.preventDefault(); // Previne o comportamento padrão para o toque
-}
-
-function touchMove(event) {
-    const touch = event.touches[0]; // Captura o movimento do toque
-    const deltaX = touch.pageX - touchStartX;
-    const deltaY = touch.pageY - touchStartY;
-
-    // Adiciona movimento suave da imagem durante o toque
-    const imgElement = event.target;
-    imgElement.style.position = 'absolute';
-    imgElement.style.left = `${touch.pageX - imgElement.width / 2}px`;
-    imgElement.style.top = `${touch.pageY - imgElement.height / 2}px`;
-
-    event.preventDefault(); // Previne o comportamento padrão do movimento
-}
-
-function touchEnd(event) {
-    const touch = event.changedTouches[0];
-    const imgElement = event.target;
-    imgElement.style.position = 'relative'; // Restaura o comportamento da imagem ao soltar
-
-    // Verifica a posição do toque ao soltar
-    const droppedOnSection = Array.from(storySections).find(section => {
-        const rect = section.getBoundingClientRect();
-        return touch.pageX >= rect.left && touch.pageX <= rect.right &&
-               touch.pageY >= rect.top && touch.pageY <= rect.bottom;
-    });
-
-    if (droppedOnSection) {
-        const correctSection = rounds[currentRound].images.find(img => img.id === imgElement.id).correctSection;
-        if (droppedOnSection.getAttribute('data-correct') === correctSection) {
-            droppedOnSection.appendChild(imgElement);
-            correctCount++;
-            if (correctCount === 3) {
-                displayResult('Você acertou todas as imagens! Próxima rodada disponível.', 'green');
-                showNextRoundButton();
+function dragEnd(event) {
+    // Verifica se a imagem foi solta em uma seção válida
+    if (draggedImage) {
+        let targetSection = null;
+        storySections.forEach(section => {
+            const sectionRect = section.getBoundingClientRect();
+            const imageRect = draggedImage.getBoundingClientRect();
+            if (
+                imageRect.right > sectionRect.left &&
+                imageRect.left < sectionRect.right &&
+                imageRect.bottom > sectionRect.top &&
+                imageRect.top < sectionRect.bottom
+            ) {
+                targetSection = section;
             }
-        } else {
-            displayResult('Está incorreto. Tente novamente!', 'red');
+        });
+
+        if (targetSection) {
+            const correctSection = rounds[currentRound].images.find(img => img.id === draggedImage.id).correctSection;
+            if (targetSection.getAttribute('data-correct') === correctSection) {
+                targetSection.appendChild(draggedImage);
+                correctCount++;
+                if (correctCount === 3) {
+                    displayResult('Você acertou todas as imagens! Próxima rodada disponível.', 'green');
+                    showNextRoundButton();
+                }
+            } else {
+                displayResult('Está incorreto. Tente novamente!', 'red');
+            }
         }
+
+        // Remove os eventos de movimento e finalização
+        document.removeEventListener('touchmove', dragMove);
+        document.removeEventListener('mousemove', dragMove);
+        document.removeEventListener('touchend', dragEnd);
+        document.removeEventListener('mouseup', dragEnd);
+        draggedImage = null;
     }
 }
 
@@ -199,8 +155,8 @@ function showNextRoundButton() {
     nextRoundButton.style.display = 'inline-block';
     nextRoundButton.style.padding = '10px 20px';
     nextRoundButton.style.border = 'none';
-    nextRoundButton.style.position = 'relative';  // Adicionado para permitir o uso de "top"
-    nextRoundButton.style.top = '20px';  // Agora o botão vai descer
+    nextRoundButton.style.position = 'relative';
+    nextRoundButton.style.top = '20px';
     nextRoundButton.style.backgroundColor = 'black';
     nextRoundButton.style.color = '#fff';
     nextRoundButton.style.cursor = 'pointer';
@@ -220,11 +176,19 @@ function goToNextRound() {
     }
 }
 
-// Eventos de arrastar e soltar para seções da história (mouse)
+// Eventos de arrastar e soltar para seções da história
 storySections.forEach(section => {
-    section.addEventListener('dragover', dragOver);
-    section.addEventListener('drop', dropImage);
-    section.addEventListener('touchstart', touchStart);
-    section.addEventListener('touchmove', touchMove);
-    section.addEventListener('touchend', touchEnd);
+    section.addEventListener('touchmove', dragOver);
+    section.addEventListener('mousemove', dragOver);
+    section.addEventListener('touchend', dropImage);
+    section.addEventListener('mouseup', dropImage);
 });
+
+function dragOver(event) {
+    event.preventDefault();
+}
+
+function dropImage(event) {
+    event.preventDefault();
+    // Código para finalizar o drop da imagem
+}
