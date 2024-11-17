@@ -10,32 +10,40 @@
     <h1>Complete a História</h1>
     <p>Arraste as imagens para as seções corretas da história.</p>
 
+    <!-- Container para as seções da história -->
     <div id="story">
-        <div class="story-section" data-correct="image1">
+        <!-- As seções serão preenchidas dinamicamente pelo JavaScript -->
+        <div class="story-section" data-correct="section1">
             <h2>Seção 1</h2>
             <p>Texto da história 1</p>
         </div>
 
-        <div class="story-section" data-correct="image2">
+        <div class="story-section" data-correct="section2">
             <h2>Seção 2</h2>
             <p>Texto da história 2</p>
         </div>
 
-        <div class="story-section" data-correct="image3">
+        <div class="story-section" data-correct="section3">
             <h2>Seção 3</h2>
             <p>Texto da história 3</p>
         </div>
     </div>
 
+    <!-- Container para as imagens, que também serão carregadas dinamicamente -->
     <div id="images">
         <h3>Imagens</h3>
-        <img src="imgs/Mula_sem_cabe_a_em_Voc__Sabia_-_Folclore.png" id="image1" class="draggable" draggable="true" alt="Imagem 1">
-        <img src="imgs/5d8603477e69319b0fc91904d015d25d.png" id="image2" class="draggable" draggable="true" alt="Imagem 2">
-        <img src="imgs/personagens-folclore-brasileiro-curupira.png" id="image3" class="draggable" draggable="true" alt="Imagem 3">
+        <!-- As imagens serão adicionadas dinamicamente pelo JavaScript -->
     </div>
 
+    <!-- Área para exibir o resultado -->
     <div id="result"></div>
 
+    <!-- Botão para avançar para a próxima rodada, controlado pelo JavaScript -->
+    <button id="nextRoundButton" style="display: none;">Próxima Rodada</button>
+
+
+
+    <!-- Arquivo JavaScript -->
     <script src="ligar.js"></script>
 </body>
 </html>

@@ -1,41 +1,85 @@
+@font-face {
+    font-family: 'JetBrainsMonoNL';
+    src: url('../fonts/JetBrainsMonoNL-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'JetBrainsMonoNL', Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    color: #333;
+    color: #000000;
+    margin-top: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'JetBrainsMonoNL', Arial, sans-serif;
 }
 
 #story {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
 .story-section {
-    width: 200px;
-    height: 250px;
-    border: 2px solid #555;
-    padding: 10px;
-    background-color: #e0e0e0;
+    width: 220px;
+    height: 280px;
+    border: 2px solid #888;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    font-family: 'JetBrainsMonoNL', Arial, sans-serif;
+}
+
+.story-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 #images {
-    margin-top: 30px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #e8f5e9;
+    border-top: 5px solid #000000;
+    border-radius: 5px;
 }
+
+
+
 
 .draggable {
     width: 150px;
     height: 150px;
-    border: 2px solid #333;
+    border: 2px solid #000000;
     margin: 10px;
     cursor: grab;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.draggable:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 #result {
     margin-top: 20px;
     font-size: 20px;
-    color: green;
+    color: rgb(0, 0, 0);
+    font-family: 'JetBrainsMonoNL', Arial, sans-serif;
 }
