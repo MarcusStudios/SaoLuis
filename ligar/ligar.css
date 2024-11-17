@@ -11,6 +11,7 @@ body {
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -29,6 +30,9 @@ h1 {
     gap: 20px;
     max-width: 1200px;
     margin: 20px auto;
+    flex-wrap: nowrap; /* Modificado para evitar que as seções fiquem empilhadas */
+    box-sizing: border-box;
+    overflow-x: auto; /* Adicionado para permitir rolagem horizontal */
 }
 
 .story-section {
@@ -41,6 +45,7 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     font-family: 'JetBrainsMonoNL', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 .story-section:hover {
@@ -51,17 +56,16 @@ h1 {
 #images {
     margin-top: 40px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: flex-start; /* Alterado para alinhar as imagens à esquerda */
+    gap: 15px; /* Aumento do espaço entre as imagens */
     padding: 20px;
     background-color: #e8f5e9;
     border-top: 5px solid #000000;
     border-radius: 5px;
+    box-sizing: border-box;
+    overflow-x: auto; /* Adicionado para permitir rolagem horizontal */
+    flex-wrap: nowrap; /* Evitar quebra de linha */
 }
-
-
-
 
 .draggable {
     width: 150px;
@@ -71,6 +75,7 @@ h1 {
     cursor: grab;
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .draggable:hover {
@@ -82,4 +87,105 @@ h1 {
     font-size: 20px;
     color: rgb(0, 0, 0);
     font-family: 'JetBrainsMonoNL', Arial, sans-serif;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    #story {
+        flex-direction: row; /* Alterado para horizontal em dispositivos maiores */
+        gap: 15px;
+        padding: 10px;
+        overflow-x: auto; /* Permite rolar horizontalmente */
+    }
+
+    .story-section {
+        width: 200px;
+        height: 250px;
+        padding: 12px;
+    }
+
+    #images {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .draggable {
+        width: 130px;
+        height: 130px;
+    }
+
+    #result {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    #story {
+        flex-direction: row;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .story-section {
+        width: 180px;
+        height: 220px;
+        padding: 10px;
+    }
+
+    #images {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px; /* Reduzido para mais espaços compactos */
+    }
+
+    .draggable {
+        width: 120px;
+        height: 120px;
+    }
+
+    #result {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    #story {
+        flex-direction: row;
+        gap: 8px;
+        padding: 5px;
+    }
+
+    .story-section {
+        width: 150px;
+        height: 180px;
+        padding: 8px;
+    }
+
+    #images {
+        flex-direction: row;
+        gap: 5px; /* Ajustado para compactar ainda mais em dispositivos pequenos */
+    }
+
+    .draggable {
+        width: 100px;
+        height: 100px;
+    }
+
+    #result {
+        font-size: 16px;
+    }
 }
