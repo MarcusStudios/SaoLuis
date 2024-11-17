@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo de História com Imagens</title>
     <link rel="stylesheet" href="ligar.css">
+    <link rel="stylesheet" href="modal.css">
+
 </head>
 <body>
+    
     <h1>Complete a História</h1>
     <p>Arraste as imagens para as seções corretas da história.</p>
-
+    
     <!-- Container para as seções da história -->
     <div id="story">
         <div class="story-section" data-correct="section1">
@@ -41,13 +44,15 @@
     <button id="nextRoundButton" style="display: none;">Próxima Rodada</button>
 
     <!-- Modal de Fim de Jogo -->
-<div id="game-end-modal" style="display: none;">
-    <div>
+<!-- Modal de Fim de Jogo -->
+<div id="game-end-modal" class="modal">
+    <div class="modal-content">
         <h2>Fim de Jogo!</h2>
-        <button id="restart-button">Reiniciar</button>
-        <button id="home-button">Voltar para a tela inicial</button>
+        <button id="restart-button" class="btn">Reiniciar</button>
+        <button id="home-button" class="btn">Voltar para a tela inicial</button>
     </div>
 </div>
+
 
     
     <!-- Arquivo JavaScript -->

@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha um Jogo</title>
     <style>
+        /* Definindo a fonte personalizada */
+        @font-face {
+            font-family: 'JetBrainsMonoNL';
+            src: url('../fonts/JetBrainsMonoNL-Bold.ttf') format('truetype');
+            font-weight: bold;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'JetBrainsMonoNL', Arial, sans-serif; /* Aplicando a fonte ao corpo */
             text-align: center;
             background-color: #f4f4f4;
             padding: 50px;
@@ -14,6 +21,7 @@
 
         h1 {
             color: #333;
+            font-family: 'JetBrainsMonoNL', Arial, sans-serif; /* Fonte personalizada no título */
         }
 
         .game-button {
@@ -22,11 +30,12 @@
             padding: 20px 40px;
             font-size: 20px;
             color: #fff;
-            background-color: #007bff;
+            background-color: #000000;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
+            font-family: 'JetBrainsMonoNL', Arial, sans-serif; /* Fonte personalizada nos botões */
         }
 
         .game-button:hover {

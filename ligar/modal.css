@@ -1,0 +1,62 @@
+/* Estilos do modal */
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: #000000;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal fique acima de outros elementos */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Largura fixa */
+}
+
+/* Estilo do título do modal */
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-family: 'JetBrainsMonoNL', sans-serif; /* Aplicando a fonte no título */
+}
+
+/* Estilo dos botões */
+.btn {
+    background-color: #000000; /* Cor de fundo verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-family: 'JetBrainsMonoNL', sans-serif; /* Aplicando a fonte no botão */
+}
+
+/* Efeito de hover nos botões */
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do botão de "Voltar para a tela inicial" */
+#home-button {
+    background-color: #000000; /* Cor de fundo vermelha */
+}
+
+#home-button:hover {
+    background-color: #e53935; /* Efeito de hover */
+}
+
+

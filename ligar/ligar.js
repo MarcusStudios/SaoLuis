@@ -283,7 +283,7 @@ function restartGame() {
 
 function goToHomeScreen() {
     // Redireciona o jogador para a tela inicial
-    window.location.href = 'index.html'; // Ou o que for adequado para o seu caso
+    window.location.href = '../index.html'; // Ou o que for adequado para o seu caso
 }
 
 
