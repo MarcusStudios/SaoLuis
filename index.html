@@ -41,14 +41,110 @@
         .game-button:hover {
             background-color: #0056b3;
         }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none; /* Ocultar por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1>Escolha seu Jogo</h1>
     <div>
-        <a href="./quebra/quebra.html" class="game-button">Quebra-Cabeça</a>
-        <a href="./ligar/ligar.html" class="game-button">Ligar</a>
-        <a href="./quiz/quiz.html" class="game-button">Quiz</a>
-    </div> 
+        <!-- Botão e Modal para Quebra-Cabeça -->
+        <a href="#" class="game-button" onclick="openModal('modalQuebra')">Quebra-Cabeça</a>
+        <div id="modalQuebra" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalQuebra')">&times;</span>
+                <h2>Quebra-Cabeça</h2>
+                <p>Complete os quebra-cabeças.</p>
+                <a href="./quebra/quebra.html" class="game-button">Jogar</a>
+            </div>
+        </div>
+
+        <!-- Botão e Modal para Ligar -->
+        <a href="#" class="game-button" onclick="openModal('modalLigar')">Ligue as Figuras</a>
+        <div id="modalLigar" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalLigar')">&times;</span>
+                <h2>Ligar</h2>
+                <p>O jogo apresenta várias imagens e textos descritivos em diferentes seções.
+                    Seu objetivo é arrastar as imagens para a seção correta com base nas descrições fornecidas.
+                    O jogo vai indicar se a imagem foi colocada corretamente ou não.
+                    Quando todas as 3 imagens estiverem na ordem correta, a próxima rodada será liberada..</p>
+                <a href="./ligar/ligar.html" class="game-button">Jogar</a>
+            </div>
+        </div>
+
+        <!-- Botão e Modal para Quiz -->
+        <a href="#" class="game-button" onclick="openModal('modalQuiz')">Quiz</a>
+        <div id="modalQuiz" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalQuiz')">&times;</span>
+                <h2>Quiz</h2>
+                <p>O quiz tem 15 perguntas, cada uma com 4 opções de resposta.
+                    Você tem 30 segundos para responder cada pergunta. Se o tempo acabar, a pergunta será pulada.
+                    Cada resposta correta soma pontos à sua pontuação final.
+                    No final do quiz, sua pontuação total será exibida.
+                    Você pode reiniciar o quiz ou voltar ao menu principal após terminar.</p>
+                <a href="./quiz/quiz.html" class="game-button">Jogar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Fechar o modal ao clicar fora da área do conteúdo
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
