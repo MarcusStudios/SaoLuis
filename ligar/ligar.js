@@ -215,7 +215,13 @@ function dragEnd(event) {
 
 
 // Função para exibir o resultado
-function displayResult(message, color) {
+let resultTimeout;
+
+function displayResult(message, color, permanent = false) {
+    // Limpa qualquer mensagem anterior
+    clearTimeout(resultTimeout);
+
+    // Define a mensagem e seu estilo
     result.textContent = message;
     result.style.color = color;
     result.style.backgroundColor = 'black';
@@ -233,7 +239,7 @@ function displayResult(message, color) {
 
     // Inicialmente a mensagem é invisível e com transformações fora do normal
     result.style.opacity = '0';
-    result.style.transform = 'translate(-50%, -50%) scale(0.9)'; // Um pequeno efeito de escala inicial
+    result.style.transform = 'translate(-50%, -50%) scale(0.9)'; // Efeito de escala inicial
 
     // Forçar a atualização do estilo para garantir que os estilos sejam aplicados antes da animação
     result.offsetHeight; // Isto força o navegador a recalcular o estilo
@@ -241,24 +247,18 @@ function displayResult(message, color) {
     // Adicionar transição de animação
     result.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
 
-    // Após o pequeno delay, a mensagem aparece
-    setTimeout(() => {
-        result.style.opacity = '1'; // Tornar visível
-        result.style.transform = 'translate(-50%, -50%) scale(1)'; // Retorna ao tamanho normal
-    }, 10); // Pequeno delay para garantir a transição
+    // A mensagem aparece com animação
+    result.style.opacity = '1';
+    result.style.transform = 'translate(-50%, -50%) scale(1)';
 
-    // Após 3 segundos, a mensagem começa a desaparecer
-    setTimeout(() => {
-        result.style.opacity = '0'; // Tornar invisível
-        result.style.transform = 'translate(-50%, -50%) scale(0.9)';
-        console.log("desaparecendo...") // Encolher um pouco na animação
-    }, 1000); // Após 3 segundos
-
-    // Após 3.5 segundos (meia secunda após a animação de desaparecimento), limpar o texto
-    setTimeout(() => {
-        console.log("limpando...")
-        result.textContent = ''; // Limpar o texto após desaparecer
-    }, 2500); // Tempo suficiente para a animação terminar
+    // Se não for permanente, a mensagem desaparecerá após 2 segundos
+    if (!permanent) {
+        resultTimeout = setTimeout(() => {
+            // Fade out a mensagem
+            result.style.opacity = '0';
+            result.style.transform = 'translate(-50%, -50%) scale(0.9)';
+        }, 1000); // A mensagem desaparece após 2 segundos
+    }
 }
 
 
