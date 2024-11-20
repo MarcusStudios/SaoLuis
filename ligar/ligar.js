@@ -191,7 +191,8 @@ function dragEnd(event) {
                     correctCount--;
                     draggedImage.classList.remove('correct');
                 }
-                displayResult('Está incorreto. Tente novamente!', 'red'); // Mensagem de erro
+                displayResult('Está incorreto. Tente novamente!', 'red');
+                console.log("Errou a imagem!"); // Mensagem de erro
             }
         } else {
             // Caso a imagem seja soltada fora de qualquer seção
