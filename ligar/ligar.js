@@ -153,7 +153,6 @@ function dragMove(event) {
 }
 
 function dragEnd(event) {
-    // Verifica se a imagem foi solta em uma seção válida
     if (draggedImage) {
         let targetSection = null;
         storySections.forEach(section => {
@@ -169,26 +168,36 @@ function dragEnd(event) {
             }
         });
 
+        const currentSection = draggedImage.closest('.story-section');
+        const correctSection = rounds[currentRound].images.find(img => img.id === draggedImage.id).correctSection;
+
         if (targetSection) {
-            // Verifica se a imagem já foi marcada como correta para não contar novamente
-            if (!draggedImage.classList.contains('correct')) {
-                const correctSection = rounds[currentRound].images.find(img => img.id === draggedImage.id).correctSection;
-                if (targetSection.getAttribute('data-correct') === correctSection) {
+            if (targetSection.getAttribute('data-correct') === correctSection) {
+                if (!draggedImage.classList.contains('correct')) {
                     targetSection.appendChild(draggedImage);
                     draggedImage.classList.add('correct'); // Marca a imagem como correta
                     correctCount++;
-                    console.log("Imagem correta!");
-
-                    displayResult('Você acertou a imagem! :)', 'green'); // Mensagem de sucesso
+                    displayResult('Você acertou a imagem! :)', "green", ); 
+                    console.log("Acertou a imagem!");
 
                     if (correctCount === 3) {
                         displayResult('Você acertou todas as imagens! Próxima rodada disponível.', 'green');
                         showNextRoundButton();
                     }
-                } else {
-                    console.log("Imagem incorreta");
-                    displayResult('Está incorreto. Tente novamente!', 'red'); // Mensagem de erro
                 }
+            } else {
+                if (draggedImage.classList.contains('correct')) {
+                    // Remover a marcação de correto ao mover para a seção errada
+                    correctCount--;
+                    draggedImage.classList.remove('correct');
+                }
+                displayResult('Está incorreto. Tente novamente!', 'red'); // Mensagem de erro
+            }
+        } else {
+            // Caso a imagem seja soltada fora de qualquer seção
+            if (draggedImage.classList.contains('correct')) {
+                correctCount--;
+                draggedImage.classList.remove('correct');
             }
         }
 
@@ -202,20 +211,14 @@ function dragEnd(event) {
 }
 
 
-function displayResult(message, color) {
-    const resultDiv = document.getElementById('result-message');
-    resultDiv.textContent = message;
-    resultDiv.style.color = color;
-    resultDiv.style.display = 'block'; // Exibe a mensagem
-    setTimeout(() => {
-        resultDiv.style.display = 'none'; // Oculta a mensagem após alguns segundos
-    }, 2000);
-}
+
+
 
 // Função para exibir o resultado
 function displayResult(message, color) {
     result.textContent = message;
     result.style.color = color;
+    result.style.background.color = 'black';
 }
 
 function showNextRoundButton() {
