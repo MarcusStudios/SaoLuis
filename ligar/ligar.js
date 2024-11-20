@@ -9,8 +9,8 @@ let correctCount = 0;
 const rounds = [
     {
         images: [
-            { id: 'image1', src: '../imgs/carruagem de ana jansen.png', correctSection: 'section1' },
             { id: 'image2', src: '../imgs/lenda da cobra de são luís.png', correctSection: 'section2' },
+            { id: 'image1', src: '../imgs/carruagem de ana jansen.png', correctSection: 'section1' },
             { id: 'image3', src: '../imgs/lenda da manguda.png', correctSection: 'section3' },
         ],
         sections: [
@@ -218,8 +218,52 @@ function dragEnd(event) {
 function displayResult(message, color) {
     result.textContent = message;
     result.style.color = color;
-    result.style.background.color = 'black';
+    result.style.backgroundColor = 'black';
+    result.style.padding = '20px';
+    result.style.borderRadius = '10px';
+    result.style.position = 'fixed'; // Fixa a mensagem na tela
+    result.style.top = '55%'; // Mover um pouco para baixo
+    result.style.left = '50%'; // Centraliza horizontalmente
+    result.style.transform = 'translate(-50%, -50%)'; // Ajusta o alinhamento
+    result.style.fontSize = '18px';
+    result.style.fontWeight = 'bold';
+    result.style.textAlign = 'center';
+    result.style.zIndex = '1000'; // Garantir que o texto fique acima de outros elementos
+    result.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+
+    // Inicialmente a mensagem é invisível e com transformações fora do normal
+    result.style.opacity = '0';
+    result.style.transform = 'translate(-50%, -50%) scale(0.9)'; // Um pequeno efeito de escala inicial
+
+    // Forçar a atualização do estilo para garantir que os estilos sejam aplicados antes da animação
+    result.offsetHeight; // Isto força o navegador a recalcular o estilo
+
+    // Adicionar transição de animação
+    result.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+
+    // Após o pequeno delay, a mensagem aparece
+    setTimeout(() => {
+        result.style.opacity = '1'; // Tornar visível
+        result.style.transform = 'translate(-50%, -50%) scale(1)'; // Retorna ao tamanho normal
+    }, 10); // Pequeno delay para garantir a transição
+
+    // Após 3 segundos, a mensagem começa a desaparecer
+    setTimeout(() => {
+        result.style.opacity = '0'; // Tornar invisível
+        result.style.transform = 'translate(-50%, -50%) scale(0.9)';
+        console.log("desaparecendo...") // Encolher um pouco na animação
+    }, 1000); // Após 3 segundos
+
+    // Após 3.5 segundos (meia secunda após a animação de desaparecimento), limpar o texto
+    setTimeout(() => {
+        console.log("limpando...")
+        result.textContent = ''; // Limpar o texto após desaparecer
+    }, 2500); // Tempo suficiente para a animação terminar
 }
+
+
+
+
 
 function showNextRoundButton() {
     nextRoundButton.textContent = 'Próxima Rodada';
