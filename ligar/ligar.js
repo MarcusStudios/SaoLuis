@@ -9,9 +9,9 @@ let correctCount = 0;
 const rounds = [
     {
         images: [
-            { id: 'image1', src: './imgs/Mula_sem_cabe_a_em_Voc__Sabia_-_Folclore.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada1_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada1_img3.png', correctSection: 'section3' },
+            { id: 'image1', src: '../imgs/carruagem de ana jansen.png', correctSection: 'section1' },
+            { id: 'image2', src: '../imgs/lenda da cobra de são luís.png', correctSection: 'section2' },
+            { id: 'image3', src: '../imgs/lenda da manguda.png', correctSection: 'section3' },
         ],
         sections: [
             { id: 'section1', text: 'Texto da história 1 - Rodada 1' },
@@ -21,9 +21,9 @@ const rounds = [
     },
     {
         images: [
-            { id: 'image1', src: './imgs/rodada2_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada2_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada2_img3.png', correctSection: 'section3' },
+            { id: 'image1', src: '../imgs/o milagre da guaxenduba.png', correctSection: 'section1' },
+            { id: 'image2', src: '../imgs/o palácio das lágrimas.png', correctSection: 'section2' },
+            { id: 'image3', src: '../imgs/praia do olho.png', correctSection: 'section3' },
         ],
         sections: [
             { id: 'section1', text: 'Texto da história 1 - Rodada 2' },
@@ -33,7 +33,7 @@ const rounds = [
     },
     {
         images: [
-            { id: 'image1', src: './imgs/rodada3_img1.png', correctSection: 'section1' },
+            { id: 'image1', src: '../imgs/são sebastião.png', correctSection: 'section1' },
             { id: 'image2', src: 'imgs/rodada3_img2.png', correctSection: 'section2' },
             { id: 'image3', src: 'imgs/rodada3_img3.png', correctSection: 'section3' },
         ],
