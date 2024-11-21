@@ -11,7 +11,7 @@
             src: url('../fonts/JetBrainsMonoNL-Bold.ttf') format('truetype');
             font-weight: bold;
         }
-
+    
         body {
             font-family: 'JetBrainsMonoNL', Arial, sans-serif; /* Aplicando a fonte ao corpo */
             text-align: center;
@@ -20,36 +20,42 @@
             background-image: url('./imgs/cobra\ encantada\ \(1\).png');
             background-size: cover;
             background-repeat: no-repeat;
-
+            background-attachment: fixed;
             margin: 0;
         }
-
+    
         h1 {
-            color: #000000;
+            color: #ffffff;
             font-family: 'JetBrainsMonoNL', Arial, sans-serif;
             font-weight: bold;
             font-size: 3em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Fonte personalizada no título */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Aumentei o sombreado para maior visibilidade */
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente para destacar o título */
+            padding: 10px 20px;
+            border-radius: 15px;
+            display: inline-block;
         }
-
+    
         .game-button {
             display: inline-block;
             margin: 20px;
-            padding: 20px 40px;
+            padding: 15px 30px;
             font-size: 20px;
-            color: #fff;
-            background-color: #000000;
+            color: #ffffff;
+            background-color: #ff8c00; /* Cor laranja brilhante para contraste */
             border: none;
-            border-radius: 10px;
+            border-radius: 15px;
             cursor: pointer;
             text-decoration: none;
             font-family: 'JetBrainsMonoNL', Arial, sans-serif; /* Fonte personalizada nos botões */
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar os botões */
+            transition: background-color 0.3s;
         }
-
+    
         .game-button:hover {
-            background-color: #0056b3;
+            background-color: #ff4500; /* Cor de hover mais vibrante */
         }
-
+    
         /* Estilos para o modal */
         .modal {
             display: none; /* Ocultar por padrão */
@@ -60,34 +66,48 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
         }
-
+    
         .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo translúcido no modal */
+            margin: 10% auto;
             padding: 20px;
-            border: 1px solid #888;
+            border: 2px solid #ff8c00; /* Borda laranja para destacar */
             width: 80%;
             max-width: 600px;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
         }
-
+    
         .close {
-            color: #aaa;
+            color: #ff4500; /* Cor de fechamento em vermelho vibrante */
             float: right;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.3s;
         }
-
+    
         .close:hover,
         .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
+            color: #ff0000; /* Vermelho mais intenso ao passar o mouse */
+        }
+    
+        p {
+            color: #333; /* Texto escuro para legibilidade */
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo leve para destacar sobre a imagem */
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Adicionei um efeito leve de sombra para as descrições */
+        .modal-content h2 {
+            color: #ff4500; /* Títulos dentro do modal em laranja vibrante */
         }
     </style>
+    
 </head>
 <body>
     <h1>Escolha seu Jogo</h1>

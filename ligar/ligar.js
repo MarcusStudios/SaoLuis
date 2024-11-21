@@ -34,8 +34,8 @@ const rounds = [
     {
         images: [
             { id: 'image1', src: '../imgs/são sebastião.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada3_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada3_img3.png', correctSection: 'section3' },
+            { id: 'image2', src: '../imgs/cobra encantada (2).png', correctSection: 'section2' },
+            { id: 'image3', src: '../imgs/ana jansen (2).png', correctSection: 'section3' },
         ],
         sections: [
             { id: 'section1', text: 'Texto da história 1 - Rodada 3' },
@@ -45,9 +45,9 @@ const rounds = [
     },
     {
         images: [
-            { id: 'image1', src: './imgs/rodada4_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada4_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada4_img3.png', correctSection: 'section3' },
+            { id: 'image1', src: '../imgs/manguda (3).png ', correctSection: 'section1' },
+            { id: 'image2', src: '../imgs/palácio das lágrimas (3).png', correctSection: 'section2' },
+            { id: 'image3', src: '../imgs/praia do olho dágua (1).png', correctSection: 'section3' },
         ],
         sections: [
             { id: 'section1', text: 'Texto da história 1 - Rodada 4' },
@@ -57,9 +57,9 @@ const rounds = [
     },
     {
         images: [
-            { id: 'image1', src: './imgs/rodada5_img1.png', correctSection: 'section1' },
-            { id: 'image2', src: 'imgs/rodada5_img2.png', correctSection: 'section2' },
-            { id: 'image3', src: 'imgs/rodada5_img3.png', correctSection: 'section3' },
+            { id: 'image1', src: '../imgs/17.png', correctSection: 'section1' },
+            { id: 'image2', src: '../imgs/cobraig.png', correctSection: 'section2' },
+            { id: 'image3', src: '../imgs/16.png', correctSection: 'section3' },
         ],
         sections: [
             { id: 'section1', text: 'Texto da história 1 - Rodada 5' },
@@ -258,7 +258,7 @@ function displayResult(message, color, permanent = false) {
             // Fade out a mensagem
             result.style.opacity = '0';
             result.style.transform = 'translate(-50%, -50%) scale(0.9)';
-        }, 1000); // A mensagem desaparece após 2 segundos
+        }, 900); // A mensagem desaparece após 2 segundos
     }
 }
 
