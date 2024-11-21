@@ -7,17 +7,17 @@
 body {
     font-family: 'JetBrainsMonoNL', Arial, sans-serif;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #ffe5b4; /* Tom de areia ou sol suave */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 h1 {
-    color: #000;
+    color: #d94e1f; /* Terracota forte, lembrando os tons das fachadas coloniais */
     margin-top: 20px;
     font-size: 2.5em;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 5px rgba(153, 73, 0, 0.2); /* Sombra com um tom de marrom quente */
 }
 
 #story {
@@ -35,20 +35,20 @@ h1 {
 .story-section {
     width: 220px;
     height: 280px;
-    border: 2px solid #888;
+    border: 2px solid #ffc857; /* Amarelo dourado para um destaque quente */
     border-radius: 10px;
     padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff7e0; /* Fundo suave que remete à luz solar */
+    box-shadow: 0 5px 15px rgba(204, 85, 0, 0.15); /* Sombra leve com tom laranja */
     transition: transform 0.3s ease;
 }
 
 .story-section.hovered {
-    border-color: green;
+    border-color: #cb4b16; /* Tom de terracota escuro quando em destaque */
 }
 
 .story-section.hovered {
-    border: 2px dashed #6a0dad;
+    border: 2px dashed #2a6478; /* Azul colonial para contraste */
 }
 
 #images {
@@ -57,8 +57,8 @@ h1 {
     justify-content: flex-start;
     gap: 15px;
     padding: 20px;
-    background-color: #e8f5e9;
-    border-top: 5px solid #000;
+    background-color: #ffe5b4; /* Mesmo fundo do corpo para uniformidade */
+    border-top: 5px solid #d94e1f; /* Bordo superior em terracota */
     border-radius: 5px;
     overflow-x: auto;
     flex-wrap: nowrap;
@@ -67,7 +67,7 @@ h1 {
 .draggable {
     width: 150px;
     height: 150px;
-    border: 2px solid #000;
+    border: 2px solid #cb4b16; /* Terracota para o contorno */
     margin: 10px;
     cursor: grab;
     border-radius: 8px;
@@ -75,13 +75,13 @@ h1 {
 }
 
 .draggable:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(204, 85, 0, 0.3); /* Sombra mais pronunciada em tom laranja */
 }
 
 #result {
     margin-top: 20px;
     font-size: 20px;
-    color: #000;
+    color: #2a6478; /* Azul colonial para contraste */
 }
 
 /* Media Queries para dispositivos móveis */
@@ -113,5 +113,4 @@ h1 {
     #result {
         font-size: 18px;
     }
-    
 }
