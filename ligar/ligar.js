@@ -14,9 +14,9 @@ const rounds = [
             { id: 'image3', src: '../imgs/lenda da manguda.png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 1' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 1' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 1' },
+            { id: 'section1', text: 'Após sua morte, Ana Jansen, figura poderosa de São Luís, teria sua alma condenada a vagar em uma carruagem fantasmagórica.' },
+            { id: 'section2', text: 'Acredita-se que uma gigantesca cobra encantada rodeia a cidade de São Luís.' },
+            { id: 'section3', text: 'A Manguda é uma mulher fantasmagórica que aparece nas ruas de São Luís durante a noite.' },
         ]
     },
     {
@@ -26,9 +26,9 @@ const rounds = [
             { id: 'image3', src: '../imgs/praia do olho.png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 2' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 2' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 2' },
+            { id: 'section1', text: 'A lenda do Milagre da Guaxenduba narra a história de Maria, uma mulher corajosa que, em uma tarde chuvosa, se perdeu ao tentar atravessar o caminho que levava até a aldeia às margens do Rio Guaxenduba. ' },
+            { id: 'section2', text: 'O Palácio das Lágrimas é um antigo casarão onde, segundo a lenda, uma mulher viveu um grande sofrimento. ' },
+            { id: 'section3', text: 'Na Praia do Olho dÁgua, um misterioso olho gigantesco surge na areia em noites de lua cheia. Ele é considerado um portal para outro mundo' },
         ]
     },
     {
@@ -39,8 +39,8 @@ const rounds = [
         ],
         sections: [
             { id: 'section1', text: 'Texto da história 1 - Rodada 3' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 3' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 3' },
+            { id: 'section2', text: 'Segundo a lenda, uma enorme cobra, com escamas que brilhavam como ouro, vive sob as fundações da Igreja de São João. ' },
+            { id: 'section3', text: 'Ana Jansen, a "Feiticeira do Maranhão", era temida por seus poderes sobrenaturais. Sua filha, embora também dotada de habilidades, tentou viver à parte da sombra da mãe, mas sempre foi marcada pelo mistério e o legado de Ana.' },
         ]
     },
     {
@@ -50,9 +50,9 @@ const rounds = [
             { id: 'image3', src: '../imgs/praia do olho dágua (1).png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 4' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 4' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 4' },
+            { id: 'section1', text: 'A lenda da Manguda é sobre uma misteriosa figura feminina que, à noite, aparece nas margens dos rios do Maranhão' },
+            { id: 'section2', text: 'A lenda do Palácio das Lágrimas conta sobre um antigo casarão onde, segundo a tradição, moravam duas mulheres que, após uma tragédia familiar, choraram tanto que as lágrimas inundaram o local. ' },
+            { id: 'section3', text: 'Na Praia do Olho dÁgua, um misterioso olho gigantesco surge na areia em noites de lua cheia. Ele é considerado um portal para outro mundo' },
         ]
     },
     {
@@ -62,9 +62,9 @@ const rounds = [
             { id: 'image3', src: '../imgs/16.png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 5' },
-            { id: 'section2', text: 'Texto da história 2 - Rodada 5' },
-            { id: 'section3', text: 'Texto da história 3 - Rodada 5' },
+            { id: 'section1', text: ' lenda narra a história de uma luta entre a Guaxenduba, uma mulher guerreira e destemida, e um poderoso espírito das águas. ' },
+            { id: 'section2', text: 'Segundo a lenda, uma enorme cobra, com escamas que brilhavam como ouro, vive sob as fundações da Igreja de São João.' },
+            { id: 'section3', text: 'A lenda afirma que o ouro foi encontrado perto da Igreja de São Sebastião, em um local que passou a ser considerado sagrado.' },
         ]
     }
 ];
