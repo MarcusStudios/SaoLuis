@@ -326,7 +326,11 @@ function restartGame() {
     // Fecha o modal de fim de jogo
     const modal = document.getElementById('game-end-modal');
     modal.style.display = 'none'; // Oculta o modal de fim de jogo
+
+    // Oculta o botão de próxima rodada
+    nextRoundButton.style.display = 'none';
 }
+
 
 
 function goToHomeScreen() {
