@@ -26,20 +26,20 @@ const rounds = [
             { id: 'image3', src: '../imgs/praia do olho.png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'A lenda do Milagre da Guaxenduba narra a história de Maria, uma mulher corajosa que, em uma tarde chuvosa, se perdeu ao tentar atravessar o caminho que levava até a aldeia às margens do Rio Guaxenduba. ' },
-            { id: 'section2', text: 'O Palácio das Lágrimas é um antigo casarão onde, segundo a lenda, uma mulher viveu um grande sofrimento. ' },
-            { id: 'section3', text: 'Na Praia do Olho dÁgua, um misterioso olho gigantesco surge na areia em noites de lua cheia. Ele é considerado um portal para outro mundo' },
-        ]
+            { id: 'section1', text: 'Na batalha de Guaxenduba, em 1614, uma mulher milagrosa ajudou os portugueses a vencer, transformando areia em pólvora. Ela se tornou Nossa Senhora da Vitória.' },
+            { id: 'section2', text: 'Na Rua 13 de Maio, um casarão ficou conhecido como "Palácio das Lágrimas" após um trágico crime.' },
+            { id: 'section3', text: 'A filha de Itaporama, ao perder seu amado para a mãe d’água, chorou tanto que suas lágrimas se tornaram nascentes que fluem até o mar, dando nome à praia.' },
+        ],
     },
     {
         images: [
             { id: 'image1', src: '../imgs/são sebastião.png', correctSection: 'section1' },
-            { id: 'image2', src: '../imgs/cobra encantada (2).png', correctSection: 'section2' },
+            { id: 'image2', src: '../imgs/cobrasl.png', correctSection: 'section2' },
             { id: 'image3', src: '../imgs/ana jansen (2).png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'Texto da história 1 - Rodada 3' },
-            { id: 'section2', text: 'Segundo a lenda, uma enorme cobra, com escamas que brilhavam como ouro, vive sob as fundações da Igreja de São João. ' },
+            { id: 'section1', text: 'A lenda diz que Dom Sebastião desapareceu na Batalha de Alcácer-Quibir, no Marrocos, e se transformou em um touro negro. ' },
+            { id: 'section2', text: 'Na lenda, quando a serpente unir sua cauda com a cabeça, ela arrastará São Luís para o mar. Seus olhos de fogo são vistos por trás das grades da Fonte do Ribeirão. ' },
             { id: 'section3', text: 'Ana Jansen, a "Feiticeira do Maranhão", era temida por seus poderes sobrenaturais. Sua filha, embora também dotada de habilidades, tentou viver à parte da sombra da mãe, mas sempre foi marcada pelo mistério e o legado de Ana.' },
         ]
     },
@@ -50,9 +50,9 @@ const rounds = [
             { id: 'image3', src: '../imgs/praia do olho dágua (1).png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: 'A lenda da Manguda é sobre uma misteriosa figura feminina que, à noite, aparece nas margens dos rios do Maranhão' },
+            { id: 'section1', text: 'No final do século XIX, bandidos contrabandistas usavam lençóis para se passar por fantasmas na Praça Gonçalves Dias, enganando a população. Mesmo desmascarada, a lenda permanece viva no imaginário local.' },
             { id: 'section2', text: 'A lenda do Palácio das Lágrimas conta sobre um antigo casarão onde, segundo a tradição, moravam duas mulheres que, após uma tragédia familiar, choraram tanto que as lágrimas inundaram o local. ' },
-            { id: 'section3', text: 'Na Praia do Olho dÁgua, um misterioso olho gigantesco surge na areia em noites de lua cheia. Ele é considerado um portal para outro mundo' },
+            { id: 'section3', text: 'O palácio da mãe d´água, situado nas profundezas do mar, é um reino encantado com paredes de corais e pedras brilhantes, onde a magia da entidade seduz aqueles que se aproximam.' },
         ]
     },
     {
@@ -62,9 +62,9 @@ const rounds = [
             { id: 'image3', src: '../imgs/16.png', correctSection: 'section3' },
         ],
         sections: [
-            { id: 'section1', text: ' lenda narra a história de uma luta entre a Guaxenduba, uma mulher guerreira e destemida, e um poderoso espírito das águas. ' },
+            { id: 'section1', text: 'Quando os portugueses estavam prestes a ser derrotados, uma mulher misteriosa surgiu entre eles. Com suas mãos miraculosas, ela transformava areia em pólvora e seixos em projéteis, dando nova força aos portugueses' },
             { id: 'section2', text: 'Segundo a lenda, uma enorme cobra, com escamas que brilhavam como ouro, vive sob as fundações da Igreja de São João.' },
-            { id: 'section3', text: 'A lenda afirma que o ouro foi encontrado perto da Igreja de São Sebastião, em um local que passou a ser considerado sagrado.' },
+            { id: 'section3', text: 'A lenda de Dom Sebastião associa o Touro Negro ao ouro perdido, guardado na Ilha dos Lençóis, sendo revelado ao ferir o touro.' },
         ]
     }
 ];
