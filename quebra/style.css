@@ -120,3 +120,26 @@ p {
 	background-color: #ABF8FF;
 	opacity: 0.8;
 }
+.voltar{
+	position: absolute;
+	left:200px;
+	bottom: 200px;
+
+}
+.voltar button {
+    background-color: #000000; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove bordas */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    border-radius: 5px; /* Arredonda os cantos */
+    transition: background-color 0.3s; /* Animação para mudança de cor */
+	font-family: 'JetBrainsMonoNL', Arial, sans-serif;
+
+}
+
+
+
+/*----------------------------------------------------Jogos-----------------------------------------------------------*/
+
