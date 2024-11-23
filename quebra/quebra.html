@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quebra-Cabeça</title>
-    <link rel="stylesheet" href="quebra.css">
-</head>
-<body>
-    <h1>Jogo de Quebra-Cabeça</h1>
-    <div id="game-board">
-        <!-- Peças do quebra-cabeça -->
-        <div class="piece" draggable="true" id="piece1"></div>
-        <div class="piece" draggable="true" id="piece2"></div>
-        <div class="piece" draggable="true" id="piece3"></div>
-        <div class="piece" draggable="true" id="piece4"></div>
 
-        <!-- Espaços para soltar as peças -->
-        <div class="drop-zone" data-correct="piece1"></div>
-        <div class="drop-zone" data-correct="piece2"></div>
-        <div class="drop-zone" data-correct="piece3"></div>
-        <div class="drop-zone" data-correct="piece4"></div>
-    </div>
+	<head>
+		<meta charset= "UTF-8"> <!--Arruma a acentuação-->
+        <title>Passatempo: Quebra-Cabeças</title> <!--Nome da aba-->
 
-    <script src="quebra.js"></script>
-</body>
+	    <link rel="stylesheet" href="reset.css"> <!--limpa tudo que o navegador cria-->
+	    <link rel="stylesheet" href="style.css"> <!--style.css-->
+	    <link rel="stylesheet" type="text/css" href="flexbox.css"> <!--flexbox da página-->
+	</head>
+
+	<body>
+		<!--Conteúdo principal-->
+		<main>
+			<div class="introducao">
+				
+				<p>Escolha uma das opções de quebra-cabeça abaixo para jogar!</p>
+			</div>
+
+			<div class="opcoes">
+				<div class="opcoes-1">
+					<ul class="opcoes-lista">
+						<li>
+							<a href="jogo1.html"><img src="../imgs/16.png"></a>
+						</li>
+
+						<li>
+							<a href="jogo2.html"><img src="../imgs/lenda da cobra de são luís.png"></a>
+						</li>
+
+						<li>
+							<a href="jogo3.html"><img src="../imgs/o palácio das lágrimas.png"></a>
+						</li>
+
+						<li>
+							<a href="jogo4.html"><img src="../imgs/carruagem de ana jansen.png"></a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="opcoes-2">
+					<ul class="opcoes-lista">
+						<li>
+							<a href="jogo5.html"><img src="../imgs/cobraig.png"></a>
+						</li>
+
+						
+					</ul>
+				</div>
+			</div>
+		</main>
+	</body>
 </html>
