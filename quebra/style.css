@@ -126,23 +126,52 @@ p {
 	background-color: #ABF8FF;
 	opacity: 0.8;
 }
-.voltar{
-	position: absolute;
-	left:200px;
-	bottom: 200px;
-
+/* Container do botão */
+/* Container do botão */
+/* Container do botão */
+.voltar {
+	position: absolute; /* Posiciona o botão em relação à janela ou ao elemento pai */
+	left: 200px; /* Distância do lado esquerdo */
+	bottom: px; /* Distância da parte inferior */
+	z-index: 999;
+	 /* Garante que o botão fique acima de outros elementos */
 }
-.voltar button {
-    background-color: #000000; /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    border: none; /* Remove bordas */
-    padding: 10px 20px; /* Espaçamento interno */
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-    border-radius: 5px; /* Arredonda os cantos */
-    transition: background-color 0.3s; /* Animação para mudança de cor */
-	font-family: 'JetBrainsMonoNL', Arial, sans-serif;
 
+/* Estilo do botão */
+.voltar button {
+	background-color: #000000; /* Cor de fundo */
+	color: white; /* Cor do texto */
+	border: none; /* Remove bordas */
+	padding: 10px 20px; /* Espaçamento interno */
+	font-size: 16px; /* Tamanho da fonte */
+	cursor: pointer; /* Cursor de ponteiro */
+	border-radius: 5px; /* Arredonda os cantos */
+	transition: background-color 0.3s, transform 0.2s; /* Animações suaves */
+	font-family: 'JetBrainsMonoNL', Arial, sans-serif;
+}
+
+/* Efeito ao passar o mouse */
+.voltar button:hover {
+	background-color: #444444;
+	transform: scale(1.05); /* Leve aumento */
+}
+
+/* Efeito ao pressionar */
+.voltar button:active {
+	background-color: #222222;
+	transform: scale(0.95);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+	.voltar {
+		left: 10px; /* Ajuste a margem esquerda */
+		bottom: 100px; /* Distância ajustada para ficar mais próximo do canto inferior */
+	}
+	.voltar button {
+		font-size: 14px; /* Reduz o tamanho da fonte */
+		padding: 8px 15px; /* Reduz o padding */
+	}
 }
 
 

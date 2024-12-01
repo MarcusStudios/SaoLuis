@@ -1,38 +1,144 @@
+/* Estilos gerais */
 main {
 	display: flex;
 	flex-direction: column;
+	padding: 10px;
+	width: 100%; /* Garante que ocupa a largura total */
+	box-sizing: border-box; /* Inclui padding/borda no cálculo da largura */
 }
 
+/* Layout do jogo */
 .main-jogo {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	gap: 20px; /* Espaço entre os elementos */
 }
 
+/* Para telas verticais */
+@media (max-width: 768px) {
+	.main-jogo {
+		flex-direction: column; /* Reorganiza os elementos em coluna */
+		justify-content: flex-start;
+		gap: 20px; /* Espaço entre os elementos */
+		padding: 10px; /* Melhora o espaçamento em dispositivos menores */
+		width: 100%;
+	}
+}
+
+/* Containers de elementos do jogo */
 .div-jogo {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
+	width: 100%; /* Adapta à largura disponível */
+	padding: 10px;
+	box-sizing: border-box; /* Garante alinhamento mesmo com padding */
 }
 
+/* Colunas de imagem */
 .coluna-imagem {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	width: 100%; /* Ocupa toda a largura disponível */
+	padding: 10px;
+	gap: 10px; /* Espaço entre imagens */
+	box-sizing: border-box;
 }
 
+/* Introdução */
 .introducao {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 15px;
+	font-size: 1rem;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 1.5; /* Melhora a legibilidade */
 }
 
+/* Lista de opções */
 .opcoes {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	width: 100%;
 }
 
+/* Ajuste da lista de opções */
 .opcoes-lista {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-wrap: wrap; /* Quebra em várias linhas */
+	justify-content: center;
+	gap: 15px; /* Espaço entre os itens */
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Ajustes para dispositivos menores (telas verticais) */
+@media (max-width: 480px) {
+	.div-jogo {
+		padding: 5px;
+	}
+
+	.main-jogo {
+		padding: 5px;
+		gap: 15px;
+	}
+
+	.introducao {
+		font-size: 0.9rem;
+		padding: 5px;
+	}
+
+	.opcoes-lista {
+		flex-direction: column;
+		gap: 15px; /* Mais espaço entre os itens */
+	}
+
+	.coluna-imagem {
+		padding: 5px;
+		gap: 5px; /* Menos espaço entre imagens */
+	}
+}
+
+/* Estilos adicionais para melhorar a acessibilidade */
+button, a {
+	font-family: Arial, sans-serif;
+	font-size: 1rem;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover, a:hover {
+	background-color: #ABF8FF;
+	transform: scale(1.05);
+}
+
+img {
+	max-width: 100%; /* Garante que imagens não ultrapassem os limites do container */
+	height: auto; /* Mantém a proporção */
+	display: block; /* Remove espaço em branco ao redor das imagens */
+}
+
+/* Ajustes visuais para botões */
+button {
+	border: none;
+	background-color: #007BFF;
+	color: white;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+	background-color: #0056b3;
+	transform: scale(0.95);
 }
