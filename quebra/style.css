@@ -14,7 +14,8 @@ p {
 	font-size: 22px;
 	padding: 10px;
 	margin-bottom: 50px;
-	font-family: JetBrains Mono;}
+	font-family: JetBrains Mono;
+}
 
 .opcoes {
 	margin: 20px auto; /* Centraliza no eixo horizontal */
@@ -54,7 +55,17 @@ p {
 		padding: 10px; /* Ajusta espaçamento para telas menores */
 	}
 }
-
+.voltar{
+	position: absolute;
+	top: 10;
+	left: 0;
+	margin: 60px;
+}
+.voltar button{
+	font-family: JetBrains Mono;
+	font-size: 20px;
+	
+}
 
 
 /*----------------------------------------------------Jogos-----------------------------------------------------------*/
@@ -71,6 +82,7 @@ p {
 .modo {
 	position: absolute;
 	transition: all 0.5s;
+	opacity: 0.5;
 }
 
 #tela-inicio {
@@ -130,6 +142,7 @@ p {
 	padding: 10px;
 	border-radius: 10px;
 	font-size: 20px;
+	font-family: JetBrains Mono;
 }
 
 .botao:hover {
