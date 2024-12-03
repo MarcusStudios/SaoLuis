@@ -1,6 +1,8 @@
 /*----------------------------------------------------Index-----------------------------------------------------------*/
 body {
-	background-color: #ABF8FF;
+	background-color: #ffffff;
+	font-family: 'JetBrainsMono', sans-serif;  /* Fonte personalizada aplicada */
+
 }
 
 h1 {
@@ -19,7 +21,7 @@ p {
 .opcoes {
 	margin: 20px auto; /* Centraliza no eixo horizontal */
 	border: 2px solid black;
-	background-color: #C2F9FE;
+	background-color: #ffffff;
 	display: flex; /* Flexbox para layout responsivo */
 	flex-direction: column; /* Organiza os itens em coluna (vertical) */
 	align-items: center; /* Centraliza os itens horizontalmente */
@@ -69,7 +71,7 @@ p {
 
 /*----------------------------------------------------Jogos-----------------------------------------------------------*/
 .main-jogo {
-	background-color: #AFF5FF;
+	background-color: #ff9900;
 }
 
 .tabuleiro {
@@ -145,6 +147,6 @@ p {
 }
 
 .botao:hover {
-	background-color: #ABF8FF;
+	background-color: #ffffff;
 	opacity: 0.8;
 }
