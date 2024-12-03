@@ -14,27 +14,47 @@ p {
 	font-size: 22px;
 	padding: 10px;
 	margin-bottom: 50px;
-	font-family: 'Saira Semi Condensed', sans-serif;
+	font-family: JetBrains Mono;}
+
+.opcoes {
+	margin: 20px auto; /* Centraliza no eixo horizontal */
+	border: 2px solid black;
+	background-color: #C2F9FE;
+	display: flex; /* Flexbox para layout responsivo */
+	flex-direction: column; /* Organiza os itens em coluna (vertical) */
+	align-items: center; /* Centraliza os itens horizontalmente */
+	padding: 10px; /* Adiciona espaçamento interno */
+	gap: 15px; /* Espaçamento entre os itens */
 }
 
 .opcoes img {
-	width: 200px;
+	width: 100%; /* Tornar a largura responsiva */
+	max-width: 200px; /* Limita o tamanho máximo */
 	border: 2px solid black;
+	box-sizing: border-box; /* Inclui padding e border no tamanho total */
 }
 
 .opcoes img:hover {
 	opacity: 0.8;
 }
 
-.opcoes {
-	margin: 20px;
-	border: 2px solid black;
-	background-color: #C2F9FE;
+.opcoes-lista li {
+	padding: 20px; /* Ajusta o espaçamento */
+	list-style: none; /* Remove os marcadores */
+	text-align: center; /* Centraliza o texto */
 }
 
-.opcoes-lista li{
-	padding: 50px;
+/* Media query para telas menores */
+@media (max-width: 768px) {
+	.opcoes img {
+		max-width: 150px; /* Reduz tamanho máximo das imagens */
+	}
+
+	.opcoes-lista li {
+		padding: 10px; /* Ajusta espaçamento para telas menores */
+	}
 }
+
 
 
 /*----------------------------------------------------Jogos-----------------------------------------------------------*/
@@ -70,10 +90,11 @@ p {
 
 #container {
 	position: relative;
-	margin: 10px auto;
+	margin: 2px auto;
 	background-color: white;
 	border: outset;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 .peca {

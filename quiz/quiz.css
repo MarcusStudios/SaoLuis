@@ -35,6 +35,11 @@ body, html {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('../imgs/cobra\ encantada\ \(1\).png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 }
 
 #quiz-container {
