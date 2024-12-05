@@ -1,39 +1,40 @@
-/*----------------------------------------------------Index-----------------------------------------------------------*/
 body {
 	background-color: #ffffff;
-	  font-family: 'JetBrainsMono', sans-serif;  /* Fonte personalizada aplicada */
-
+	font-family: 'JetBrainsMono', sans-serif;
 }
 
 h1 {
-	font-size: 50px;
+	font-size: 3rem; /* Tamanho de fonte relativo */
 	padding: 10px;
-	margin: 50px;
+	margin: 2rem;
 }
 
 p {
-	font-size: 22px;
+	font-size: 1.5rem; /* Tamanho de fonte adaptável */
 	padding: 10px;
-	margin-bottom: 50px;
-	font-family: JetBrains Mono;
+	margin-bottom: 3rem;
+	font-family: 'JetBrains Mono';
 }
 
 .opcoes {
-	margin: 20px auto; /* Centraliza no eixo horizontal */
+	margin: 20px auto;
 	border: 2px solid black;
 	background-color: #ffffff;
-	display: flex; /* Flexbox para layout responsivo */
-	flex-direction: column; /* Organiza os itens em coluna (vertical) */
-	align-items: center; /* Centraliza os itens horizontalmente */
-	padding: 10px; /* Adiciona espaçamento interno */
-	gap: 15px; /* Espaçamento entre os itens */
+	display: flex;
+	flex-wrap: wrap; /* Permite quebra de linha em elementos flex */
+	flex-direction: row; /* Layout padrão horizontal */
+	align-items: center;
+	justify-content: center; /* Centraliza horizontalmente */
+	padding: 10px;
+	gap: 15px;
 }
 
 .opcoes img {
-	width: 100%; /* Tornar a largura responsiva */
-	max-width: 200px; /* Limita o tamanho máximo */
+	width: 100%;
+	max-width: 200px;
+	height: auto; /* Mantém proporção */
 	border: 2px solid black;
-	box-sizing: border-box; /* Inclui padding e border no tamanho total */
+	box-sizing: border-box;
 }
 
 .opcoes img:hover {
@@ -41,37 +42,68 @@ p {
 }
 
 .opcoes-lista li {
-	padding: 20px; /* Ajusta o espaçamento */
-	list-style: none; /* Remove os marcadores */
-	text-align: center; /* Centraliza o texto */
+	padding: 20px;
+	list-style: none;
+	text-align: center;
+}
+
+.voltar {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	margin: 60px;
+}
+
+.voltar button {
+	font-family: 'JetBrains Mono';
+	font-size: 1.25rem;
 }
 
 /* Media query para telas menores */
 @media (max-width: 768px) {
+	.opcoes {
+		flex-direction: column; /* Layout vertical */
+	}
+
+	h1 {
+		font-size: 2rem; /* Reduz tamanho do título */
+		margin: 1rem;
+	}
+
+	p {
+		font-size: 1.2rem; /* Ajusta tamanho do texto */
+	}
+
 	.opcoes img {
-		max-width: 150px; /* Reduz tamanho máximo das imagens */
+		max-width: 150px;
 	}
 
 	.opcoes-lista li {
-		padding: 10px; /* Ajusta espaçamento para telas menores */
+		padding: 10px;
 	}
 }
-.voltar{
-	position: absolute;
-	top: 10;
-	left: 0;
-	margin: 60px;
+
+/* Media query para telas muito pequenas (celulares menores) */
+@media (max-width: 480px) {
+	.opcoes {
+		padding: 5px;
+		gap: 10px;
+	}
+
+	.opcoes img {
+		max-width: 100px;
+	}
+
+	.voltar button {
+		font-size: 1rem; /* Reduz tamanho do botão */
+	}
 }
-.voltar button{
-	font-family: JetBrains Mono;
-	font-size: 20px;
-	
-}
+
 
 
 /*----------------------------------------------------Jogos-----------------------------------------------------------*/
 .main-jogo {
-	background-color: #ff9900;
+	background-color: #ffffff;
 }
 
 .tabuleiro {

@@ -11,6 +11,8 @@ const questions = [
     answer: 2, // Resposta correta: "Nas profundezas da cidade, em galerias subterrâneas"
   },
   {
+
+    
     question: "2. Como são descritos os olhos da serpente na lenda?",
     options: [
       "Azuis e brilhantes",
@@ -67,7 +69,7 @@ const questions = [
       "Na área da Praça Gonçalves Dias",
       "Na Igreja do Carmo",
     ],
-    answer: 2, 
+    answer: 2,
   },
   {
     question:
@@ -87,75 +89,71 @@ const questions = [
       "Eram espíritos de antigos escravos",
       "Eram uma ilusão causada pela neblina",
       "Eram bandidos contrabandistas disfarçados com lençóis",
-      "Eram alucinações causadas por gás de lampiões"
+      "Eram alucinações causadas por gás de lampiões",
     ],
     answer: 2,
   },
   {
     question:
-    "10. Lenda da Praia do Olho D’água: Quem era o chefe da aldeia indígena mencionada na lenda?",
-    options: [
-      "Itapema.",
-      "Itaporama.",
-      "Guraci.",
-      "Jaci."
-    ],
-    answer: 1 
+      "10. Lenda da Praia do Olho D’água: Quem era o chefe da aldeia indígena mencionada na lenda?",
+    options: ["Itapema.", "Itaporama.", "Guraci.", "Jaci."],
+    answer: 1,
   },
   {
     question:
-    "11. Lenda da Praia do Olho D’água: Quem seduziu o jovem amado pela filha de Itaporama?",
+      "11. Lenda da Praia do Olho D’água: Quem seduziu o jovem amado pela filha de Itaporama?",
     options: [
       "A mãe d'água.",
       "Para criar uma nova lenda popular",
       "Para atrair turistas curiosos",
-      "Para encobrir suas atividades criminosas e escapar da atenção da população"
+      "Para encobrir suas atividades criminosas e escapar da atenção da população",
     ],
-    answer: 0
+    answer: 0,
   },
   {
     question:
-    "12. Lenda da Praia do Olho D’água: O que aconteceu com a filha de Itaporama após a perda do amado?",
+      "12. Lenda da Praia do Olho D’água: O que aconteceu com a filha de Itaporama após a perda do amado?",
     options: [
       "Ela partiu para o palácio da mãe d'água.",
       "Ela se casou com outro jovem da tribo.",
       "Ela mergulhou em tristeza profunda e chorou incessantemente.",
-      "Ela se tornou chefe da tribo no lugar de seu pai."
+      "Ela se tornou chefe da tribo no lugar de seu pai.",
     ],
-    answer: 2
+    answer: 2,
   },
   {
     question:
-    "13. Lenda do Palácio das Lágrimas: Onde estava localizado o casarão de três pavimentos mencionado na lenda?",
+      "13. Lenda do Palácio das Lágrimas: Onde estava localizado o casarão de três pavimentos mencionado na lenda?",
     options: [
       "Na rua da Estrela",
       "Na rua 13 de maio, em frente à Igreja São João",
       "Na rua dos Afogados",
-      "Na rua do Sol"
+      "Na rua do Sol",
     ],
-    answer: 1
+    answer: 1,
   },
   {
-    question: "14. Lenda do Palácio das Lágrimas: Qual foi o motivo do assassinato entre os dois irmãos portugueses?",
-  options: [
-    "Uma disputa por terras",
-    "Inveja pela riqueza do irmão",
-    "Desacordo sobre o comércio de escravos",
-    "Vingança por uma traição"
-  ],
-  answer: 1
+    question:
+      "14. Lenda do Palácio das Lágrimas: Qual foi o motivo do assassinato entre os dois irmãos portugueses?",
+    options: [
+      "Uma disputa por terras",
+      "Inveja pela riqueza do irmão",
+      "Desacordo sobre o comércio de escravos",
+      "Vingança por uma traição",
+    ],
+    answer: 1,
   },
   {
-    question: "15.  Lenda do Palácio das Lágrimas: Quem o irmão pobre decidiu assassinar?",
+    question:
+      "15.  Lenda do Palácio das Lágrimas: Quem o irmão pobre decidiu assassinar?",
     options: [
       "Seu primo rico",
       "Seu sobrinho",
       "Seu irmão rico",
-      "Um escravo que herdou a fortuna"
+      "Um escravo que herdou a fortuna",
     ],
-    answer: 2 
-  }
-
+    answer: 2,
+  },
 ];
 
 // Exemplo de como acessar as questões e respostas
@@ -243,7 +241,8 @@ function selectAnswer(selectedIndex) {
   // Exibe o feedback
   const feedback = document.createElement("div");
   feedback.classList.add("feedback");
-  feedback.textContent = selectedIndex === correctAnswer ? "Resposta Correta!" : "Resposta Errada!";
+  feedback.textContent =
+    selectedIndex === correctAnswer ? "Resposta Correta!" : "Resposta Errada!";
   document.getElementById("question-container").appendChild(feedback);
 
   // Remove o feedback após 2 segundos e vai para a próxima questão
@@ -266,7 +265,9 @@ function goToNextQuestion() {
 
 function updateQuestionCounter() {
   const questionCounter = document.getElementById("question-counter");
-  questionCounter.textContent = `${currentQuestionIndex + 1} de ${questions.length} Questões`;
+  questionCounter.textContent = `${currentQuestionIndex + 1} de ${
+    questions.length
+  } Questões`;
 }
 
 // Função para mostrar a tela final com a pontuação
@@ -275,30 +276,30 @@ function showFinalScreen() {
   const finalScreen = document.getElementById("final-screen");
   const finalScore = document.getElementById("final-score");
   finalScore.textContent = `Sua pontuação foi: ${score} de ${questions.length}`;
-  
+
   // Esconde todas as telas do quiz
-  const quizScreens = document.querySelectorAll('.quiz-screen');
-  quizScreens.forEach(screen => {
-    screen.style.display = 'none';
+  const quizScreens = document.querySelectorAll(".quiz-screen");
+  quizScreens.forEach((screen) => {
+    screen.style.display = "none";
   });
 
   // Exibe a tela final
-  finalScreen.style.display = 'block'; // Torna a tela final visível
+  finalScreen.style.display = "block"; // Torna a tela final visível
 }
 
 // Função para reiniciar o quiz
 function restartQuiz() {
   currentQuestionIndex = 0;
   score = 0; // Reseta a pontuação
-  
+
   // Esconde a tela final
   const finalScreen = document.getElementById("final-screen");
-  finalScreen.style.display = 'none'; // Esconde a tela final
+  finalScreen.style.display = "none"; // Esconde a tela final
 
   // Exibe novamente as telas de quiz
-  const quizScreens = document.querySelectorAll('.quiz-screen');
-  quizScreens.forEach(screen => {
-    screen.style.display = 'block'; // Exibe a tela de quiz
+  const quizScreens = document.querySelectorAll(".quiz-screen");
+  quizScreens.forEach((screen) => {
+    screen.style.display = "block"; // Exibe a tela de quiz
   });
 
   startQuiz(); // Reinicia o quiz
@@ -308,8 +309,6 @@ function restartQuiz() {
 function goToGameScreen() {
   window.location.href = "../index.html"; // Redireciona para a tela de jogos
 }
-
-
 
 // Inicializa o quiz quando a página carregar
 window.onload = startQuiz;
