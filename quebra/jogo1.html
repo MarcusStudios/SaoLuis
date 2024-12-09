@@ -1,48 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Quebra-Cabeça</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flexbox.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Homemade+Apple&family=Khula&family=Monoton&family=Nanum+Pen+Script&family=Saira+Semi+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="main-jogo">
+        <div class="coluna-imagem">
+            <img src="../imgs/16.png">
+            <img src="../imgs/16.png">
+            <img src="../imgs/16.png">
+        </div>
 
-	<head>
-		<meta charset= "UTF-8"> <!--Arruma a acentuação-->
-        <title>Quebra-Cabeça</title> <!--Nome da aba-->
+        <div class="div-jogo">
+            <div id="container" class="tabuleiro">
+                <!-- Peças do quebra-cabeça -->
+                <div id="peca1" class="peca" data-value="1"><img src="img/jogo1/16 (0_0).png"></div>
+                <div id="peca2" class="peca" data-value="2"><img src="img/jogo1/16 (0_1).png"></div>
+                <div id="peca3" class="peca" data-value="3"><img src="img/jogo1/16 (0_2).png"></div>
+                <div id="peca4" class="peca" data-value="4"><img src="img/jogo1/16 (1_0).png"></div>
+                <div id="peca5" class="peca" data-value="5"><img src="img/jogo1/16 (1_1).png"></div>
+                <div id="peca6" class="peca" data-value="6"><img src="img/jogo1/16 (1_2).png"></div>
+                <div id="peca7" class="peca" data-value="7"><img src="img/jogo1/16 (2_0).png"></div>
+                <div id="peca8" class="peca" data-value="8"><img src="img/jogo1/16 (2_1).png"></div>
 
-	    <link rel="stylesheet" href="reset.css"> <!--limpa tudo que o navegador cria-->
-	    <link rel="stylesheet" href="style.css"> <!--style.css-->
-	    <link rel="stylesheet" type="text/css" href="flexbox.css"> <!--flexbox da página-->
-	    <link rel="stylesheet" type="text/css" href="flexbox.css"> <!--flexbox da página-->
-	    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Homemade+Apple&family=Khula&family=Monoton&family=Nanum+Pen+Script&family=Saira+Semi+Condensed:wght@300&display=swap" rel="stylesheet">
-	</head>
+                <div id="tela-inicio" class="tabuleiro modo"><img src="img/img-inicio.png"></div>
+                <div id="tela-final" class="tabuleiro modo"><img src="img/img-final.png"></div>
+            </div>
 
-	<body>
+            <div class="botao">
+                <p class="p-botao"><a href="quebra.html">Escolher outro quebra-cabeça</a></p>
+            </div>
+        </div>
 
-		<!--Conteúdo principal-->
-		<main class="main-jogo">
-			<div class="coluna-imagem">
-				<img src="../imgs/16.png">
-				<img src="../imgs/16.png">
-				<img src="../imgs/16.png">
-			
-			</div>
+        <div id="ranking-container">
+            <h3>🏆 Ranking:</h3>
+            <table id="ranking-table" aria-live="polite">
+                <caption>Ranking dos melhores jogadores</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Posição:</th>
+                        <th scope="col">Nome:</th>
+                        <th scope="col">Tempo:</th>
+                        <th scope="col">Curso:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas do ranking serão inseridas dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+        
+        
+        
 
-			<div class="div-jogo">
-				<div id="container" class="tabuleiro">
-					<div id="peca1" class="peca" data-value="1"><img src="img/jogo1/16 (0_0).png"></div>
-					<div id="peca2" class="peca" data-value="2"><img src="img/jogo1/16 (0_1).png"></div>
-					<div id="peca3" class="peca" data-value="3"><img src="img/jogo1/16 (0_2).png"></div>
-					<div id="peca4" class="peca" data-value="4"><img src="img/jogo1/16 (1_0).png"></div>
-					<div id="peca5" class="peca" data-value="5"><img src="img/jogo1/16 (1_1).png"></div>
-					<div id="peca6" class="peca" data-value="6"><img src="img/jogo1/16 (1_2).png"></div>
-					<div id="peca7" class="peca" data-value="7"><img src="img/jogo1/16 (2_0).png"></div>
-					<div id="peca8" class="peca" data-value="8"><img src="img/jogo1/16 (2_1).png"></div>
+        <!-- Ranking -->
+        
+    </main>
 
-					<div id="tela-inicio" class="tabuleiro modo"><img src="img/img-inicio.png"></div>
-					<div id="tela-final" class="tabuleiro modo"><img src="img/img-final.png"></div>
-				</div>
+    <script type="module" src="script.js"></script>
+    <!-- Firebase App (necessário para todos os serviços Firebase) -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAcKZ4TuYq11pa0tUGll_5JNMPM-KMtWCo",
+          authDomain: "saoluis-2d35b.firebaseapp.com",
+          databaseURL: "https://saoluis-2d35b-default-rtdb.firebaseio.com",
+          projectId: "saoluis-2d35b",
+          storageBucket: "saoluis-2d35b.firebasestorage.app",
+          messagingSenderId: "470166381424",
+          appId: "1:470166381424:web:aa206a3076b8b20835a5b5",
+          measurementId: "G-20L0WBR7XE"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    
+    
+      
 
-				<div class="botao">
-					<p class="p-botao"><a href="quebra.html">Escolher outro quebra-cabeça</a></p>
-				</div>
-			</div>
-		</main>
-		<script src="script.js"></script> <!--script.js-->
-	</body>
+      
+
+
+</body>
 </html>
