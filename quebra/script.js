@@ -104,20 +104,21 @@ import {
 
   function fimDeJogo() {
     const nomeJogador = prompt("Digite seu nome para salvar no ranking:");
+    const curso = prompt("Digite seu curso:");
     const tempoFim = Date.now(); // Marca o final do jogo
     const tempoDecorrido = Math.floor((tempoFim - tempoInicio) / 1000); // Em segundos
     const movimentos = Math.floor(Math.random() * 100); // Substituir pela lógica real
   
     if (nomeJogador) {
-      salvarPontuacao(nomeJogador, movimentos, tempoDecorrido);
+      salvarPontuacao(nomeJogador, movimentos, tempoDecorrido, curso);
       carregarRanking();
     }
   }
   
 
-  async function salvarPontuacao(nome, movimentos, tempo) {
+  async function salvarPontuacao(nome, movimentos, tempo, curso) {
     try {
-      await addDoc(rankingCollection, { nome, movimentos, tempo });
+      await addDoc(rankingCollection, { nome, movimentos, tempo, curso });
       console.log("Pontuação salva com sucesso!");
     } catch (error) {
       console.error("Erro ao salvar pontuação:", error);
@@ -132,21 +133,21 @@ import {
     try {
       const q = query(
         rankingCollection,
-        orderBy("movimentos", "asc"),
+        orderBy("tempo", "asc"),
         limit(10)
       );
       const querySnapshot = await getDocs(q);
   
       let posicao = 1;
       querySnapshot.forEach((doc) => {
-        const { nome, movimentos, tempo } = doc.data();
+        const { nome, tempo, curso } = doc.data();
   
         const row = document.createElement("tr");
         row.innerHTML = `
           <td>${posicao++}</td>
           <td>${nome}</td>
           <td>${tempo}s</td>
-          
+          <td>${curso || "Não informado"}</td>
         `;
         tbody.appendChild(row);
       });
@@ -154,6 +155,7 @@ import {
       console.error("Erro ao carregar ranking:", error);
     }
   }
+  
   
 
   document.addEventListener("DOMContentLoaded", carregarRanking);
