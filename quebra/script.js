@@ -26,7 +26,7 @@ import {
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   const rankingCollection = collection(db, "ranking");
-  const q = query(rankingCollection, orderBy("movimentos", "asc"), limit(10));
+  const q = query(rankingCollection, orderBy("movimentos", "asc"), limit(7));
   let tempoInicio;
 
   // Nome correto da coleção
