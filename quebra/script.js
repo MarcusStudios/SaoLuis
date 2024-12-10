@@ -108,13 +108,17 @@ import {
     const tempoFim = Date.now(); // Marca o final do jogo
     const tempoDecorrido = Math.floor((tempoFim - tempoInicio) / 1000); // Em segundos
     const movimentos = Math.floor(Math.random() * 100); // Substituir pela lógica real
-  
+     
+ 
     if (nomeJogador) {
       salvarPontuacao(nomeJogador, movimentos, tempoDecorrido, curso);
       carregarRanking();
     }
+    setTimeout(function() {
+			telaFinal.addEventListener("click", comecaJogo, false);
+		}, 500);
+
   }
-  
 
   async function salvarPontuacao(nome, movimentos, tempo, curso) {
     try {
@@ -124,24 +128,19 @@ import {
       console.error("Erro ao salvar pontuação:", error);
     }
   }
-  
 
   async function carregarRanking() {
     const tbody = document.querySelector("#ranking-table tbody");
     tbody.innerHTML = ""; // Limpa a tabela antes de popular
-  
+
     try {
-      const q = query(
-        rankingCollection,
-        orderBy("tempo", "asc"),
-        limit(10)
-      );
+      const q = query(rankingCollection, orderBy("tempo", "asc"), limit(7));
       const querySnapshot = await getDocs(q);
-  
+
       let posicao = 1;
       querySnapshot.forEach((doc) => {
         const { nome, tempo, curso } = doc.data();
-  
+
         const row = document.createElement("tr");
         row.innerHTML = `
           <td>${posicao++}</td>
@@ -155,8 +154,6 @@ import {
       console.error("Erro ao carregar ranking:", error);
     }
   }
-  
-  
 
   document.addEventListener("DOMContentLoaded", carregarRanking);
 
@@ -196,14 +193,13 @@ import {
   function comecaJogo() {
     tempoInicio = Date.now(); // Marca o início do jogo
     pecas = randomSort(pecas);
-  
+
     this.style.opacity = "0";
     this.style.zIndex = "-1";
     this.removeEventListener("click", comecaJogo, false);
-  
+
     render();
   }
-  
 
   init();
 })();
