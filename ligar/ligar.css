@@ -42,6 +42,10 @@ h1 {
     box-shadow: 0 5px 15px rgba(204, 85, 0, 0.15); /* Sombra leve com tom laranja */
     transition: transform 0.3s ease;
 }
+.story-section h2{
+    color: #000000;
+    margin-top: 4px; /* Terracota forte, lembrando os tons das fachadas coloniais */
+}
 
 .story-section.hovered {
     border-color: #cb4b16; /* Tom de terracota escuro quando em destaque */

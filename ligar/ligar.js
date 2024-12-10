@@ -40,7 +40,7 @@ const rounds = [
         sections: [
             { id: 'section1', text: 'A lenda diz que Dom Sebastião desapareceu na Batalha de Alcácer-Quibir, no Marrocos, e se transformou em um touro negro. ' },
             { id: 'section2', text: 'Na lenda, quando a serpente unir sua cauda com a cabeça, ela arrastará São Luís para o mar. Seus olhos de fogo são vistos por trás das grades da Fonte do Ribeirão. ' },
-            { id: 'section3', text: 'Ana Jansen, a "Feiticeira do Maranhão", era temida por seus poderes sobrenaturais. Sua filha, embora também dotada de habilidades, tentou viver à parte da sombra da mãe, mas sempre foi marcada pelo mistério e o legado de Ana.' },
+            { id: 'section3', text: 'Ana Jansen, conhecida como a "Feiticeira do Maranhão", era temida por seus poderes sobrenaturais. Sua filha, embora buscasse escapar do legado da mãe, foi igualmente envolta em mistério e marcada por sua herança.' },
         ]
     },
     {

@@ -108,13 +108,17 @@ import {
     const tempoFim = Date.now(); // Marca o final do jogo
     const tempoDecorrido = Math.floor((tempoFim - tempoInicio) / 1000); // Em segundos
     const movimentos = Math.floor(Math.random() * 100); // Substituir pela lógica real
-     
- 
     if (nomeJogador) {
       salvarPontuacao(nomeJogador, movimentos, tempoDecorrido, curso);
       carregarRanking();
     }
 
+    telaFinal.style.opacity = "0.5";
+		telaFinal.style.zIndex = "1";
+		setTimeout(function() {
+			telaFinal.addEventListener("click", comecaJogo, false);
+		}, 500); 
+    
   }
 
   async function salvarPontuacao(nome, movimentos, tempo, curso) {
