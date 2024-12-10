@@ -114,9 +114,6 @@ import {
       salvarPontuacao(nomeJogador, movimentos, tempoDecorrido, curso);
       carregarRanking();
     }
-    setTimeout(function() {
-			telaFinal.addEventListener("click", comecaJogo, false);
-		}, 500);
 
   }
 
