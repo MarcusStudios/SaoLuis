@@ -70,28 +70,46 @@ import {
   }
 
   function movePeca() {
-    var index = pecas.indexOf(this);
+    console.log("movePeca");
+		var index = pecas.indexOf(this);
 
-    if (index % 3 !== 0 && !pecas[index - 1]) {
-      pecas[index - 1] = this;
-      pecas[index] = null;
-    } else if (index % 3 !== 2 && !pecas[index + 1]) {
-      pecas[index + 1] = this;
-      pecas[index] = null;
-    } else if (index > 2 && !pecas[index - 3]) {
-      pecas[index - 3] = this;
-      pecas[index] = null;
-    } else if (index < 6 && !pecas[index + 3]) {
-      pecas[index + 3] = this;
-      pecas[index] = null;
-    }
+		//se o elemento não estiver na coluna da esquerda
+		if(index % 3 !== 0) {
+			//verificar se tem espaço em branco à esquerda
+			if(!pecas[index - 1]) {
+				pecas[index - 1] = this;
+				pecas[index] = null;
+			}
+		}
 
-    render();
+		if(index % 3 !== 2) {
+			//verificar se tem espaço em branco à esquerda
+			if(!pecas[index + 1]) {
+				pecas[index + 1] = this;
+				pecas[index] = null;
+			}
+		}
 
-    if (verificaVitoria()) {
-      fimDeJogo();
-    }
-  }
+		if(index > 2) {
+			//verificar se tem espaço em branco à esquerda
+			if(!pecas[index - 3]) {
+				pecas[index - 3] = this;
+				pecas[index] = null;
+			}
+		}
+
+		if(index < 6) {
+			//verificar se tem espaço em branco à esquerda
+			if(!pecas[index + 3]) {
+				pecas[index + 3] = this;
+				pecas[index] = null;
+			}
+		}
+		render();
+		if(verificaVitoria()) {
+			fimDeJogo();
+		}
+	}
 
   function verificaVitoria() {
     for (var i in pecas) {
