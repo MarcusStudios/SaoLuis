@@ -71,45 +71,45 @@ import {
 
   function movePeca() {
     console.log("movePeca");
-		var index = pecas.indexOf(this);
+    var index = pecas.indexOf(this);
 
-		//se o elemento não estiver na coluna da esquerda
-		if(index % 3 !== 0) {
-			//verificar se tem espaço em branco à esquerda
-			if(!pecas[index - 1]) {
-				pecas[index - 1] = this;
-				pecas[index] = null;
-			}
-		}
+    //se o elemento não estiver na coluna da esquerda
+    if (index % 3 !== 0) {
+      //verificar se tem espaço em branco à esquerda
+      if (!pecas[index - 1]) {
+        pecas[index - 1] = this;
+        pecas[index] = null;
+      }
+    }
 
-		if(index % 3 !== 2) {
-			//verificar se tem espaço em branco à esquerda
-			if(!pecas[index + 1]) {
-				pecas[index + 1] = this;
-				pecas[index] = null;
-			}
-		}
+    if (index % 3 !== 2) {
+      //verificar se tem espaço em branco à esquerda
+      if (!pecas[index + 1]) {
+        pecas[index + 1] = this;
+        pecas[index] = null;
+      }
+    }
 
-		if(index > 2) {
-			//verificar se tem espaço em branco à esquerda
-			if(!pecas[index - 3]) {
-				pecas[index - 3] = this;
-				pecas[index] = null;
-			}
-		}
+    if (index > 2) {
+      //verificar se tem espaço em branco à esquerda
+      if (!pecas[index - 3]) {
+        pecas[index - 3] = this;
+        pecas[index] = null;
+      }
+    }
 
-		if(index < 6) {
-			//verificar se tem espaço em branco à esquerda
-			if(!pecas[index + 3]) {
-				pecas[index + 3] = this;
-				pecas[index] = null;
-			}
-		}
-		render();
-		if(verificaVitoria()) {
-			fimDeJogo();
-		}
-	}
+    if (index < 6) {
+      //verificar se tem espaço em branco à esquerda
+      if (!pecas[index + 3]) {
+        pecas[index + 3] = this;
+        pecas[index] = null;
+      }
+    }
+    render();
+    if (verificaVitoria()) {
+      fimDeJogo();
+    }
+  }
 
   function verificaVitoria() {
     for (var i in pecas) {
@@ -132,11 +132,10 @@ import {
     }
 
     telaFinal.style.opacity = "0.5";
-		telaFinal.style.zIndex = "1";
-		setTimeout(function() {
-			telaFinal.addEventListener("click", comecaJogo, false);
-		}, 500); 
-    
+    telaFinal.style.zIndex = "1";
+    setTimeout(function () {
+      telaFinal.addEventListener("click", comecaJogo, false);
+    }, 500);
   }
 
   async function salvarPontuacao(nome, movimentos, tempo, curso) {
