@@ -261,3 +261,19 @@ footer {
   color: #888;
   font-family: 'JetBrainsMono', sans-serif; /* Fonte personalizada no rodapé */
 }
+.vol button {
+  font-family: 'JetBrainsMono', sans-serif;
+  font-size: 1.25rem;
+  background-color: #ff7f50; /* Laranja coral */
+  color: #fff; /* Texto branco */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+  
+  position: absolute; /* Torna o botão posicionável */
+  top: 10px; /* Distância do topo da tela */
+  left: 10px; /* Distância da borda esquerda da tela */
+}
