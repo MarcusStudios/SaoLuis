@@ -39,6 +39,8 @@ body, html {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  touch-action: manipulation; /* Impede o zoom e o arraste em dispositivos móveis */
+
   
 }
 

@@ -2,6 +2,8 @@ body {
 	background-color: #fff4e6; /* Fundo laranja claro */
 	font-family: 'JetBrainsMono', sans-serif;
 	color: #333; /* Texto escuro para contraste */
+	touch-action: manipulation; /* Impede o zoom e o arraste em dispositivos móveis */
+
 }
 
 h1 {
