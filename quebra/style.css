@@ -6,6 +6,22 @@ body {
 
 }
 
+.introducao button{
+	position: absolute; /* Posicionando o link de forma absoluta */
+    top: 10px; /* Distância do topo */
+    left: 10px; /* Distância da esquerda */
+    
+    font-family: 'JetBrains Mono'; /* Fonte fornecida */
+    font-size: 1.25rem; /* Tamanho da fonte */
+    background-color: #ff7f50; /* Laranja coral */
+    color: #fff; /* Texto branco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: background-color 0.3s, transform 0.3s;
+}
 h1 {
 	font-size: 3rem; /* Tamanho de fonte relativo */
 	padding: 10px;
@@ -161,6 +177,21 @@ p {
     margin-bottom: 10px;
     text-align: center;
     color: #ff4500; /* Texto laranja forte */
+}
+#ranking-container button {
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 110px;
+	text-decoration: none;
+	color: #fff;
+	background-color: #ff7f50; /* Fundo laranja coral */
+	border: 2px solid #ff4500; /* Borda laranja forte */
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	border: none;
+    padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: JetBrains Mono;
 }
 
 .tabuleiro {
