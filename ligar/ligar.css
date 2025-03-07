@@ -1,11 +1,11 @@
 @font-face {
-    font-family: 'JetBrainsMonoNL';
-    src: url('../fonts/JetBrainsMonoNL-Bold.ttf') format('truetype');
+    font-family: 'JetBrainsMonoL';
+    src: url('../fonts/JetBrainsMonoL-Bold.ttf') format('truetype');
     font-weight: bold;
 }
 
 body {
-    font-family: 'JetBrainsMonoNL', Arial, sans-serif;
+    font-family: 'JetBrainsMonoL', Arial, sans-serif;
     text-align: center;
     background-color: #ffe5b4; /* Tom de areia ou sol suave */
     margin: 0;

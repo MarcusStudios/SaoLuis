@@ -35,7 +35,7 @@ const rounds = [
         images: [
             { id: 'image1', src: '../imgs/são sebastião.png', correctSection: 'section1' },
             { id: 'image2', src: '../imgs/cobrasl.png', correctSection: 'section2' },
-            { id: 'image3', src: '../imgs/ana jansen (2).png', correctSection: 'section3' },
+            { id: 'image3', src: '../imgs/ana jansen(2).png', correctSection: 'section3' },
         ],
         sections: [
             { id: 'section1', text: 'A lenda diz que Dom Sebastião desapareceu na Batalha de Alcácer-Quibir, no Marrocos, e se transformou em um touro negro. ' },

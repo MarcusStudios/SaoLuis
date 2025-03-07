@@ -28,7 +28,7 @@
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
-    font-family: 'JetBrainsMonoNL', sans-serif; /* Aplicando a fonte no título */
+    font-family: 'JetBrainsMonoL', sans-serif; /* Aplicando a fonte no título */
 }
 
 /* Estilo dos botões */
@@ -42,7 +42,7 @@
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-    font-family: 'JetBrainsMonoNL', sans-serif; /* Aplicando a fonte no botão */
+    font-family: 'JetBrainsMonoL', sans-serif; /* Aplicando a fonte no botão */
 }
 
 /* Efeito de hover nos botões */
