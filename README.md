@@ -37,5 +37,7 @@ Quer ajudar a melhorar este projeto mágico? Contribuições são **muito bem-vi
 Este projeto está licenciado sob a licença **MIT** 📝
 
 ---
+## 📞 Contato
+marcuseduardo846@gmail.com
 
 🚀 Explore, jogue e mergulhe nas incríveis lendas de São Luís! A cidade das histórias que atravessam o tempo espera por você! 🌃✨
